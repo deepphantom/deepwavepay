@@ -20,8 +20,6 @@ export default function LoginAndRegistrationLayout({
       </div>
       <main className="mt-7 sm:mt-14">
         {children}
-        {children}
-        {children}
       </main>
     </div>
   );
