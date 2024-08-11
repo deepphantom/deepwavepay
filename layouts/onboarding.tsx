@@ -10,7 +10,7 @@ export default function LoginAndRegistrationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative flex flex-col h-screen">
+    <div className="relative flex flex-col">
       <Head sitetitle="Welcome" />
       <div className="sticky bg-background z-50 top-0 flex items-center justify-between max-w-[100%] px-5 sm:px-0 py-5 sm:max-w-[88%] self-center w-full">
         <Link href={"/"} prefetch={true}>
