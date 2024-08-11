@@ -68,7 +68,7 @@ export default function SignInPage() {
             {/* Forgot Password */}
             <div className="mt-3 flex items-center justify-end">
               <div className=" flex items-center gap-1 cursor-pointer">
-                <TbInfoCircle size={25} className="opacity-60" />
+                <AiOutlineInfoCircle size={25} className="opacity-60" />
                 <p className={`${onboardSubtitle()} font-light`}>forgot password</p>
               </div>
             </div>
