@@ -1,20 +1,21 @@
-import { subtitle, title } from "@/components/primitives";
-import { siteConfig } from "@/config/site";
-import DefaultLayout from "@/layouts/default";
-import LoginAndRegistrationLayout from "@/layouts/onboarding";
-import Link from "next/link";
+import { FormLayout } from "@/layouts/onboard/form";
+import React from "react";
 
 export default function OnboardingPage() {
+
+  // State
+  const [isVisible, setIsVisible] = React.useState(false);
+  const toggleVisibility = () => setIsVisible(!isVisible);
+
   return (
-    <LoginAndRegistrationLayout>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-        <div className=" flex flex-col gap-3 max-w-lg text-center justify-center">
-          <h1 className={title()}>Onboarding</h1>
-           <div>
-            <Link href={`/${siteConfig.pagesPaths.signin}`} prefetch={true} className={subtitle()}>Sign In</Link>
-          </div>
+    <FormLayout 
+      title="Let's get started"
+      subtitle="I want to open an"
+      body={
+        <div>
+          <p>cskcknsk</p>
         </div>
-      </section>
-    </LoginAndRegistrationLayout>
+      }
+    />
   );
 }
