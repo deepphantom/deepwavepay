@@ -12,13 +12,15 @@ export default function LoginAndRegistrationLayout({
   return (
     <div className="relative flex flex-col h-screen">
       <Head sitetitle="Welcome" />
-      <div className=" sticky top-0 flex items-center justify-between max-w-[100%] px-5 sm:px-0 py-5 sm:max-w-[88%] self-center w-full">
+      <div className=" sticky z-50 top-0 flex items-center justify-between max-w-[100%] px-5 sm:px-0 py-5 sm:max-w-[88%] self-center w-full">
         <Link href={"/"} prefetch={true}>
           <AppLogo size={50} />
         </Link>
         <ThemeSwitch />
       </div>
       <main className="mt-7 sm:mt-14">
+        {children}
+        {children}
         {children}
       </main>
     </div>
