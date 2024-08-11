@@ -18,7 +18,7 @@ export default function LoginAndRegistrationLayout({
         </Link>
         <ThemeSwitch />
       </div>
-      <main className="mt-7 sm:mt-14 fixed">
+      <main className="mt-7 sm:mt-14">
         {children}
       </main>
     </div>
