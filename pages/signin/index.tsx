@@ -29,7 +29,7 @@ export default function SignInPage() {
           <Card className="py-14 px-5 sm:px-8 w-full">
 
             {/* Heading */}
-            <div className="mb-3">
+            <div className="mb-3 flex-col flex gap-1">
               <p className={onboardtitle({size: 'sm'})}>Sign In</p>
               <p className={`${onboardSubtitle()} font-light`}>Welcome back! Login and proceed</p>
             </div>
@@ -76,7 +76,7 @@ export default function SignInPage() {
             {/* Button */}
             <div className="w-full mt-8">
               <Button color='primary' className="w-full text-white h-14" radius='sm' size='lg'>Continue</Button>
-              <div className="mt-3 flex justify-end gap-3">
+              <div className="mt-3 flex justify-end gap-2">
                 <p className={` text-sm opacity-65 font-light`}>Don’t have an account?</p>
                 <p className={`text-primary font-medium text-sm cursor-pointer`}>Create Account</p>
               </div>
