@@ -25,7 +25,7 @@ export default function SignInPage() {
     <FormLayout 
       title="Sign In"
       subtitle="Welcome back! Continue"
-      body={
+      children={
         <>
           <div className="flex flex-col gap-4 mt-10">
             <div className="flex flex-col gap-2">

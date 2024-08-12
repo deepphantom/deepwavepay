@@ -18,11 +18,13 @@ module.exports = {
         light: {
           colors: {
             primary: "#024EA2",
+            onboardBg: "#E5E6EB"
           },
         },
         dark: {
           colors: {
-            primary: "#024EA2"
+            primary: "#024EA2",
+            onboardBg: "#E5E6EB"
           },
         },
       }

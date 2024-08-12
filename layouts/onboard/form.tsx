@@ -3,29 +3,40 @@ import { Card } from "@nextui-org/card"
 import { Divider } from "@nextui-org/divider"
 import LoginAndRegistrationLayout from "../onboarding"
 import { ReactNode } from "react"
+import { AppLogo } from "@/components/Icon"
+import Link from "next/link"
+import { siteConfig } from "@/config/site"
 
-export const FormLayout = ({title, subtitle, body} : {title: string, subtitle: string, body:ReactNode } )=> {
+export const FormLayout = ({title, subtitle, children} : {title: string, subtitle: string, children:ReactNode } )=> {
     return (
         <LoginAndRegistrationLayout>
-            <section className="flex w-full items-center justify-center">
+            <section className="flex h-[100%] items-start">
 
-                <div className="w-[93%] sm:w-[500px]">
-
-                <Card className="py-10 sm:py-20 px-5 sm:px-8 w-full">
+                {/* Left */}
+                <div className="basis-[100%] flex flex-col p-10 md:basis-[50%] h-[100%]">
 
                     {/* Heading */}
-                    <div className="mb-1 flex-col flex gap-1">
-                    <p className={onboardtitle({size: 'sm'})}>{title}</p>
-                    <p className={`${onboardSubtitle()} font-light`}>{subtitle}</p>
+                    <div className="flex items-center justify-between">
+                        {/* Logo */}
+                        <AppLogo />
+                        {/* Link */}
+                        <Link prefetch={true} className="text-[14px] text-md underline" href={`/${siteConfig.pagesPaths.onboading}`}>Create an account</Link>
                     </div>
-                    
-                    {/* Divider */}
-                    <Divider />
-                    
-                    {/* Body */}
-                    {body}
 
-                </Card>
+                    {/* Body */}
+                    <div className="flex flex-1 items-center justify-center">
+                        <div className="w-[350px]">
+                            {children}
+                        </div>
+                    </div>
+
+                    {/* Footer */}
+                    <Link href={{}} className="underline text-[14px] text-center">Trouble signing in?</Link>
+ 
+                </div>
+
+                {/* Right */}
+                <div className="basis-[0%] md:basis-[50%] bg-blue-950 h-[100%]">
 
                 </div>
 
