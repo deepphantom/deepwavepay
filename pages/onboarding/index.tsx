@@ -11,7 +11,7 @@ export default function OnboardingPage() {
     <FormLayout 
       title="Let's get started"
       subtitle="I want to open an"
-      body={
+      children={
         <div>
           <p>cskcknsk</p>
         </div>

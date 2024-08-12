@@ -67,7 +67,7 @@ export const onboardtitle = tv({
     },
     size: {
       sm: "text-2xl lg:text-3xl",
-      md: "text-[2.3rem] lg:text-5xl leading-9",
+      md: "text-3xl leading-9",
       lg: "text-4xl lg:text-6xl",
     },
     fullWidth: {

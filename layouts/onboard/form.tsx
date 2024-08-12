@@ -8,6 +8,7 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 
 export const FormLayout = ({title, subtitle, children} : {title: string, subtitle: string, children:ReactNode } )=> {
+    
     return (
         <LoginAndRegistrationLayout>
             <section className="flex h-[100%] items-start">
@@ -20,18 +21,18 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                         {/* Logo */}
                         <AppLogo />
                         {/* Link */}
-                        <Link prefetch={true} className="text-[14px] text-md underline" href={`/${siteConfig.pagesPaths.onboading}`}>Create an account</Link>
+                        <Link prefetch={true} className="text-[13px] font-bold text-md underline" href={`/${siteConfig.pagesPaths.onboading}`}>Create an account</Link>
                     </div>
 
                     {/* Body */}
                     <div className="flex flex-1 items-center justify-center">
-                        <div className="w-[350px]">
+                        <div className="w-[350px] flex flex-col items-center">
                             {children}
                         </div>
                     </div>
 
                     {/* Footer */}
-                    <Link href={`${siteConfig.pagesPaths.help}`} className="underline text-[14px] text-center">Trouble signing in?</Link>
+                    <Link href={`${siteConfig.pagesPaths.help}`} className="underline text-[13px] font-bold text-center">Trouble signing in?</Link>
  
                 </div>
 
@@ -43,4 +44,5 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
             </section>
         </LoginAndRegistrationLayout>
     )
+
 }

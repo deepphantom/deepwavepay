@@ -18,7 +18,8 @@ module.exports = {
         light: {
           colors: {
             primary: "#024EA2",
-            onboardBg: "#E5E6EB"
+            onboardBg: "#E5E6EB",
+            inputBg: "#F0F1F5"
           },
         },
         dark: {
