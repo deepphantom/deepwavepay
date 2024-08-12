@@ -24,7 +24,7 @@ export default function SignInPage() {
   return (
     <FormLayout 
       title="Sign In"
-      subtitle="Welcome back! Login to proceed"
+      subtitle="Welcome back! Continue"
       body={
         <>
           <div className="flex flex-col gap-4 mt-10">
