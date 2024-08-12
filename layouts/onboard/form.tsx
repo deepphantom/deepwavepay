@@ -31,7 +31,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                     </div>
 
                     {/* Footer */}
-                    <Link href={{}} className="underline text-[14px] text-center">Trouble signing in?</Link>
+                    <Link href={`${siteConfig.pagesPaths.help}`} className="underline text-[14px] text-center">Trouble signing in?</Link>
  
                 </div>
 

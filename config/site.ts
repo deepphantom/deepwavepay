@@ -69,7 +69,8 @@ export const siteConfig = {
 
   pagesPaths: {
     signin: "signin",
-    onboading: "onboarding"
+    onboading: "onboarding",
+    help: "help"
   }
 
 };
