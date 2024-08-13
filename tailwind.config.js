@@ -19,13 +19,14 @@ module.exports = {
           colors: {
             primary: "#24665E",
             onboardBg: "#E5E6EB",
-            inputBg: "#F0F1F5"
+            onboardInputBg: "#F2F2F4",
           },
         },
         dark: {
           colors: {
             primary: "#24665E",
-            onboardBg: "#E5E6EB"
+            onboardBg: "#E5E6EB",
+            onboardInputBg: "#F2F2F4",
           },
         },
       }

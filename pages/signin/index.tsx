@@ -49,7 +49,7 @@ export default function SignInPage() {
       <div className={`flex w-full flex-col ${dimensions.height < 700 ? 'gap-5' : 'gap-8' }`}>
 
         {/* Heading */}
-        <div className="text-left sm:text-center">
+        <div className="text-center sm:text-center">
           <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Welcome back</h1>
           <p className="text-black">Kindly enter your Login details</p>
         </div>
@@ -69,7 +69,7 @@ export default function SignInPage() {
 
         <div className="flex w-full items-center justify-between">
           <Divider className="basis-[43%] bg-[grey]" />
-          <p className=" font-bold">OR</p>
+          <p className=" font-bold text-black">OR</p>
           <Divider className="basis-[43%] bg-[grey]" />
         </div>
 
@@ -80,11 +80,29 @@ export default function SignInPage() {
             radius='sm'
             type='email'
             placeholder="Email"
+            style={{color: 'black'}}
+            classNames={{
+              input: [
+              ],
+              innerWrapper: [
+              ],
+              inputWrapper: [
+                "bg-onboardInputBg", // BG - color
+                "group-data-[focus=true]:bg-onboardInputBg", // Focus on !Focus (Blur)
+                "group-data-[hover=true]:bg-onboardInputBg", // Hover
+                "dark:group-data-[focus=true]:text-black", // Text Color
+              ],
+
+            }}
           />
 
           <div>
             <Input
               radius='sm'
+              classNames={{
+                inputWrapper: "bg-onboardInputBg",
+                innerWrapper: 'bg-onboardInputBg',
+              }}
               endContent={
                 <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
                   {isVisible ? (
