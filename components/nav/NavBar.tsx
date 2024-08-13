@@ -6,10 +6,10 @@ export const NavBar = () => {
         <div>
             <p>Nav Bar Here</p>
             <div>
-                <Link href={`/${siteConfig.pagesPaths.signin}`} prefetch={true}>Sign In</Link>
+                <Link href={`/${siteConfig.pagesPaths.signin}`}>Sign In</Link>
             </div>
             <div>
-                <Link href={`/${siteConfig.pagesPaths.onboading}`} prefetch={true}>Get Started</Link>
+                <Link href={`/${siteConfig.pagesPaths.onboading}`}>Get Started</Link>
             </div>
         </div>
     )

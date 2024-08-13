@@ -16,44 +16,46 @@ export default function SignInPage() {
   const [isVisible, setIsVisible] = React.useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-
   return (
+    
     <FormLayout 
       title="Sign In"
       subtitle="Welcome back! Continue"
-      children={
-        <div className="flex w-full flex-col gap-10">
+    >
+      <div className="flex w-full flex-col gap-10">
 
-          {/* Heading */}
-          <div className="text-center">
-            <h1 className={onboardtitle({size: 'md'})}>Welcome back</h1>
-            <p>Kindly enter your Login details</p>
-          </div>
+        {/* Heading */}
+        <div className="text-center">
+          <h1 className={`${onboardtitle({size: 'md'})} text-black`}>Welcome back</h1>
+          <p className="text-black">Kindly enter your Login details</p>
+        </div>
 
-          {/* Button */}
-          <div className="flex flex-col gap-3">
-              <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-[#F2F2F4] rounded-lg">
-                <IoLogoGoogle size={20} />
-                <p className="font-bold text-[14px]">Log in with Google </p>
-              </div>
-              <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-[#F2F2F4] rounded-lg">
-                <FaGithub size={20} />
-                <p className="font-bold text-[14px]">Log in with GitHub </p>
-              </div>
-          </div>
+        {/* Button */}
+        <div className="flex flex-col gap-3">
+            <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-[#F2F2F4] rounded-lg">
+              <IoLogoGoogle size={20} color="black" />
+              <p className="font-bold text-[14px] text-black">Log in with Google </p>
+            </div>
+            <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-[#F2F2F4] rounded-lg">
+              <FaGithub size={20} color='black' />
+              <p className="font-bold text-[14px] text-black">Log in with GitHub </p>
+            </div>
+        </div>
 
-          <Divider />
+        <Divider className="text-black bg-[grey]" />
 
-          {/* Input Forgot Password */}
-          <div className="flex flex-col gap-3">
+        {/* Input Forgot Password */}
+        <div className="flex flex-col gap-3">
+
+          <Input
+            radius='sm'
+            type='email'
+            placeholder="Email"
+          />
+
+          <div>
             <Input
-              className=""
-              radius='sm'
-              type='email'
-              placeholder="Email"
-            />
-            <Input 
-              className=""
+              classNames={{mainWrapper: 'remove-input-bg'}}
               radius='sm'
               endContent={
                 <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
@@ -68,17 +70,19 @@ export default function SignInPage() {
               placeholder="Password"
             />
             <div className="text-right">
-              <Link href={`${siteConfig.pagesPaths.help}`} className="underline text-[13px] font-bold" prefetch={true} >Forgot password</Link>
+              <Link href={`${siteConfig.pagesPaths.help}`} className="underline text-[13px] font-bold text-black" >Forgot password</Link>
             </div>
           </div>
 
-          {/* Button */}
-          <div>
-            <Button className="h-[54px] bg-primary text-white" fullWidth>Sign In</Button>  
-          </div>
-
         </div>
-      }
-    />
+
+        {/* Button */}
+        <div>
+          <Button className="h-[54px] bg-primary text-white" fullWidth>Sign In</Button>  
+        </div>
+
+      </div>
+    </FormLayout>
+
   );
 }

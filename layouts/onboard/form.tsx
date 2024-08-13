@@ -6,6 +6,7 @@ import { ReactNode } from "react"
 import { AppLogo } from "@/components/Icon"
 import Link from "next/link"
 import { siteConfig } from "@/config/site"
+import Image from "next/image"
 
 export const FormLayout = ({title, subtitle, children} : {title: string, subtitle: string, children:ReactNode } )=> {
     
@@ -21,7 +22,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                         {/* Logo */}
                         <AppLogo />
                         {/* Link */}
-                        <Link prefetch={true} className="text-[13px] font-bold text-md underline" href={`/${siteConfig.pagesPaths.onboading}`}>Create an account</Link>
+                        <Link className="text-[13px] font-bold text-md text-black underline" href={'/'}>Create an account</Link>
                     </div>
 
                     {/* Body */}
@@ -32,13 +33,18 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                     </div>
 
                     {/* Footer */}
-                    <Link href={`${siteConfig.pagesPaths.help}`} className="underline text-[13px] font-bold text-center">Trouble signing in?</Link>
+                    <Link href={'/'} className="underline text-[13px] font-bold text-center text-black">Trouble signing in?</Link>
  
                 </div>
 
                 {/* Right */}
-                <div className="basis-[0%] md:basis-[50%] bg-blue-950 h-[100%]">
-
+                <div className="basis-[0%] md:basis-[50%] h-[100%]">
+                    <Image 
+                        src={require("../../public/assets/4.jpg")}
+                        style={{width: '100%', height: "100%", objectFit: 'cover' }}
+                        alt="onboard-bg"
+                        quality={40}
+                    />
                 </div>
 
             </section>

@@ -34,11 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <NextUIProvider navigate={router.push}>
       <NextThemesProvider>
         {loading && (
-          <Progress
-            size="sm"
-            isIndeterminate
-            aria-label="Loading..."
-          />
+          <Progress size="sm" isIndeterminate aria-label="Loading..."/>
         )}
         <Component {...pageProps} />
       </NextThemesProvider>
