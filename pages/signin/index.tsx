@@ -46,7 +46,7 @@ export default function SignInPage() {
       title="Sign In"
       subtitle="Welcome back! Continue"
     >
-      <div className={`flex w-full flex-col ${dimensions.height < 700 ? 'gap-5' : 'gap-10' }`}>
+      <div className={`flex w-full flex-col ${dimensions.height < 700 ? 'gap-5' : 'gap-8' }`}>
 
         {/* Heading */}
         <div className="text-left sm:text-center">
