@@ -25,7 +25,7 @@ export default function SignInPage() {
       <div className="flex w-full flex-col gap-10 sm:gap-10">
 
         {/* Heading */}
-        <div className="text-center">
+        <div className="text-left sm:text-center">
           <h1 className={`${onboardtitle({size: 'md'})} text-black`}>Welcome back</h1>
           <p className="text-black">Kindly enter your Login details</p>
         </div>
