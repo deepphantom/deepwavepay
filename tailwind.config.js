@@ -17,14 +17,14 @@ module.exports = {
       themes: {
         light: {
           colors: {
-            primary: "#024EA2",
+            primary: "#24665E",
             onboardBg: "#E5E6EB",
             inputBg: "#F0F1F5"
           },
         },
         dark: {
           colors: {
-            primary: "#024EA2",
+            primary: "#24665E",
             onboardBg: "#E5E6EB"
           },
         },
