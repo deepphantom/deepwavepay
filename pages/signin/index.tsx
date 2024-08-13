@@ -84,7 +84,6 @@ export default function SignInPage() {
 
           <div>
             <Input
-              classNames={{mainWrapper: 'remove-input-bg'}}
               radius='sm'
               endContent={
                 <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
@@ -107,7 +106,7 @@ export default function SignInPage() {
 
         {/* Button */}
         <div>
-          <Button className="h-[54px] bg-primary text-white font-medium" fullWidth>Sign In</Button>  
+          <Button radius="sm" className="h-[45px] bg-primary text-white font-medium" fullWidth>Sign In</Button>  
         </div>
 
       </div>
