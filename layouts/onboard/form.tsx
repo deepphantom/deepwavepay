@@ -33,7 +33,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                     </div>
 
                     {/* Body */}
-                    <div className="flex flex-col gap-16 sm:gap-0 items-center justify-center">
+                    <div className="flex flex-col gap-7 sm:gap-0 items-center justify-center">
 
                         <div className="w-[95%] sm:w-[350px] flex flex-col items-center">
                             {children}
