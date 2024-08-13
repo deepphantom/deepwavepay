@@ -25,8 +25,9 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                         <Link href="/">
                             <Image 
                                 src={siteImagesPath.appLogo}
-                                style={{width: 130, objectFit: 'cover' }}
+                                style={{ objectFit: 'cover' }}
                                 alt="sitelogo"
+                                className="w-[100px] sm:w-[130px]"
                             />
                         </Link>
                         {/* Link */}
