@@ -16,7 +16,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
             <section className="flex items-start">
 
                 {/* Left */}
-                <div className="basis-[100%] justify-between flex flex-col p-7 sm:p-10 md:basis-[50%]">
+                <div className="basis-[100%] justify-between flex flex-col p-7 sm:p-10 md:basis-[50%] h-screen">
 
                     {/* Heading */}
                     <div className="flex items-center justify-between">
