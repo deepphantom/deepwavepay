@@ -1,8 +1,8 @@
 import { onboardtitle } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
-import { Input } from "@nextui-org/input";
-import React from "react";
+import { Input } from "@nextui-org/react";
+import React, { useEffect, useState } from "react";
 import { EyeFilledIcon, EyeSlashFilledIcon } from "@/components/Icon";
 import {Divider} from "@nextui-org/divider";
 import { Button } from "@nextui-org/button";
@@ -16,17 +16,41 @@ export default function SignInPage() {
   const [isVisible, setIsVisible] = React.useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
+   const [dimensions, setDimensions] = useState({ 
+    width: 0, 
+    height: 0 
+  });
+
+  useEffect(() => {
+    // Function to update dimensions
+    const updateDimensions = () => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    // Call the function on initial render
+    updateDimensions();
+
+    // Update dimensions on window resize
+    window.addEventListener('resize', updateDimensions);
+
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
   return (
     
     <FormLayout 
       title="Sign In"
       subtitle="Welcome back! Continue"
     >
-      <div className="flex w-full flex-col gap-10 sm:gap-10">
+      <div className={`flex w-full flex-col ${dimensions.height < 700 ? 'gap-5' : 'gap-10' }`}>
 
         {/* Heading */}
         <div className="text-left sm:text-center">
-          <h1 className={`${onboardtitle({size: 'md'})} text-black`}>Welcome back</h1>
+          <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Welcome back</h1>
           <p className="text-black">Kindly enter your Login details</p>
         </div>
 
@@ -42,7 +66,12 @@ export default function SignInPage() {
             </div>
         </div>
 
-        <Divider className="text-black bg-[grey]" />
+
+        <div className="flex w-full items-center justify-between">
+          <Divider className="basis-[43%] bg-[grey]" />
+          <p className=" font-bold">OR</p>
+          <Divider className="basis-[43%] bg-[grey]" />
+        </div>
 
         {/* Input Forgot Password */}
         <div className="flex flex-col gap-3">

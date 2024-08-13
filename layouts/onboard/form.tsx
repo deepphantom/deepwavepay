@@ -12,6 +12,7 @@ import { siteImagesPath } from "@/config/images"
 export const FormLayout = ({title, subtitle, children} : {title: string, subtitle: string, children:ReactNode } )=> {
     
     return (
+        
         <LoginAndRegistrationLayout>
             <section className="flex items-start">
 
@@ -64,6 +65,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
 
             </section>
         </LoginAndRegistrationLayout>
+        
     )
 
 }
