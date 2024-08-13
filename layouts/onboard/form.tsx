@@ -46,7 +46,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                 {/* Right */}
                 <div className="basis-[0%] md:basis-[50%] h-[100%]">
                     <Image 
-                        src={require("../../public/assets/4.jpg")}
+                        src={require("../../public/assets/3.jpg")}
                         style={{width: '100%', height: "100%", objectFit: 'cover' }}
                         alt="onboard-bg"
                         quality={40}
