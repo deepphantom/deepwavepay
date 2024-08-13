@@ -13,10 +13,10 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
     
     return (
         <LoginAndRegistrationLayout>
-            <section className="flex h-[100%] items-start">
+            <section className="flex items-start">
 
                 {/* Left */}
-                <div className="basis-[100%] justify-between flex flex-col p-7 sm:p-10 md:basis-[50%] h-[100%]">
+                <div className="basis-[100%] justify-between flex flex-col p-7 sm:p-10 md:basis-[50%] h-screen">
 
                     {/* Heading */}
                     <div className="flex items-center justify-between">
@@ -44,9 +44,9 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                 </div>
 
                 {/* Right */}
-                <div className="basis-[0%] md:basis-[50%] h-[100%]">
+                <div className="basis-[0%] md:basis-[50%] h-screen">
                     <Image 
-                        src={require("../../public/assets/3.jpg")}
+                        src={require("../../public/assets/5.jpg")}
                         style={{width: '100%', height: "100%", objectFit: 'cover' }}
                         alt="onboard-bg"
                         quality={40}
