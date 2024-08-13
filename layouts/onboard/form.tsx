@@ -16,7 +16,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
             <section className="flex items-start">
 
                 {/* Left */}
-                <div className="basis-[100%] justify-between flex flex-col p-7 sm:p-10 md:basis-[50%] h-screen">
+                <div className="basis-[100%] justify-between flex flex-col p-7 sm:p-10 md:basis-[50%]">
 
                     {/* Heading */}
                     <div className="flex items-center justify-between">
@@ -35,13 +35,13 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                     {/* Body */}
                     <div className="flex flex-col gap-7 sm:gap-0 items-center justify-center">
 
-                        <div className="w-[95%] sm:w-[350px] flex flex-col items-center">
+                        <div className="w-[100%] sm:w-[350px] flex flex-col items-center">
                             {children}
                         </div>
 
                         {/* Footer */}
                         <div className="flex flex-col sm:hidden">
-                            <Link href={'/'} className="underline text-[13px] font-bold text-center text-black">Trouble signing in?</Link>
+                            <Link href={`/${siteConfig.pagesPaths.help}`} className="underline text-[13px] font-bold text-center text-black">Trouble signing in?</Link>
                         </div>
 
                     </div>
@@ -58,7 +58,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                         src={require("../../public/assets/5.jpg")}
                         style={{width: '100%', height: "100%", objectFit: 'cover' }}
                         alt="onboard-bg"
-                        quality={40}
+                        quality={10}
                     />
                 </div>
 

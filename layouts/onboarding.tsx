@@ -6,7 +6,7 @@ export default function LoginAndRegistrationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative bg-onboardBg flex flex-col h-screen">
+    <div className="relative bg-onboardBg flex flex-col">
       <Head sitetitle="Welcome" />
       <main className="h-[100%]">
         {children}
