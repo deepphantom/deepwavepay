@@ -22,7 +22,7 @@ export default function SignInPage() {
       title="Sign In"
       subtitle="Welcome back! Continue"
     >
-      <div className="flex w-full flex-col gap-10">
+      <div className="flex w-full flex-col gap-10 sm:gap-10">
 
         {/* Heading */}
         <div className="text-center">
@@ -78,7 +78,7 @@ export default function SignInPage() {
 
         {/* Button */}
         <div>
-          <Button className="h-[54px] bg-primary text-white" fullWidth>Sign In</Button>  
+          <Button className="h-[54px] bg-primary text-white font-medium" fullWidth>Sign In</Button>  
         </div>
 
       </div>

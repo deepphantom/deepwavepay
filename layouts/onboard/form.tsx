@@ -16,7 +16,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
             <section className="flex h-[100%] items-start">
 
                 {/* Left */}
-                <div className="basis-[100%] flex flex-col p-7 sm:p-10 md:basis-[50%] h-[100%]">
+                <div className="basis-[100%] justify-between flex flex-col p-7 sm:p-10 md:basis-[50%] h-[100%]">
 
                     {/* Heading */}
                     <div className="flex items-center justify-between">
@@ -29,11 +29,11 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                             />
                         </Link>
                         {/* Link */}
-                        <Link className="text-[13px] font-bold text-md text-black underline" href={'/'}>Create an account</Link>
+                        <Link className="text-[13px] font-bold text-md text-black underline" href={`${siteConfig.pagesPaths.onboading}`}>Create an account</Link>
                     </div>
 
                     {/* Body */}
-                    <div className="flex flex-1 items-center justify-center">
+                    <div className="flex items-center justify-center">
                         <div className="w-[95%] sm:w-[350px] flex flex-col items-center">
                             {children}
                         </div>
@@ -41,7 +41,6 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
 
                     {/* Footer */}
                     <Link href={'/'} className="underline text-[13px] font-bold text-center text-black">Trouble signing in?</Link>
- 
                 </div>
 
                 {/* Right */}
