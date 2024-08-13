@@ -33,14 +33,23 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                     </div>
 
                     {/* Body */}
-                    <div className="flex items-center justify-center">
+                    <div className="flex flex-col gap-16 sm:gap-0 items-center justify-center">
+
                         <div className="w-[95%] sm:w-[350px] flex flex-col items-center">
                             {children}
                         </div>
+
+                        {/* Footer */}
+                        <div className="flex flex-col sm:hidden">
+                            <Link href={'/'} className="underline text-[13px] font-bold text-center text-black">Trouble signing in?</Link>
+                        </div>
+
                     </div>
 
                     {/* Footer */}
-                    <Link href={'/'} className="underline text-[13px] font-bold text-center text-black">Trouble signing in?</Link>
+                    <div className="flex sm:hidden"></div>
+                    <Link href={'/'} className="hidden sm:flex justify-center underline text-[13px] font-bold text-center text-black">Trouble signing in?</Link>
+
                 </div>
 
                 {/* Right */}
