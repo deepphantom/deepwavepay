@@ -16,7 +16,7 @@ export default function SignInPage() {
   const [isVisible, setIsVisible] = React.useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-   const [dimensions, setDimensions] = useState({ 
+  const [dimensions, setDimensions] = useState({ 
     width: 0, 
     height: 0 
   });
@@ -56,11 +56,11 @@ export default function SignInPage() {
 
         {/* Button */}
         <div className="flex flex-col gap-3">
-            <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-[#F2F2F4] rounded-lg">
+            <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-onboardWhite rounded-lg">
               <IoLogoGoogle size={20} color="black" />
               <p className="font-bold text-[14px] text-black">Log in with Google </p>
             </div>
-            <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-[#F2F2F4] rounded-lg">
+            <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-onboardWhite rounded-lg">
               <FaGithub size={20} color='black' />
               <p className="font-bold text-[14px] text-black">Log in with GitHub </p>
             </div>
@@ -87,9 +87,9 @@ export default function SignInPage() {
               innerWrapper: [
               ],
               inputWrapper: [
-                "bg-onboardInputBg", // BG - color
-                "group-data-[focus=true]:bg-onboardInputBg", // Focus on !Focus (Blur)
-                "group-data-[hover=true]:bg-onboardInputBg", // Hover
+                "bg-onboardWhite", // BG - color
+                "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                "group-data-[hover=true]:bg-onboardWhite", // Hover
                 "dark:group-data-[focus=true]:text-black", // Text Color
               ],
 
@@ -99,9 +99,19 @@ export default function SignInPage() {
           <div>
             <Input
               radius='sm'
+              style={{color: 'black'}}
               classNames={{
-                inputWrapper: "bg-onboardInputBg",
-                innerWrapper: 'bg-onboardInputBg',
+                input: [
+                ],
+                innerWrapper: [
+                ],
+                inputWrapper: [
+                  "bg-onboardWhite", // BG - color
+                  "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                  "group-data-[hover=true]:bg-onboardWhite", // Hover
+                  "dark:group-data-[focus=true]:text-black", // Text Color
+                ],
+
               }}
               endContent={
                 <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">

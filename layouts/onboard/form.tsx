@@ -2,15 +2,23 @@ import { onboardtitle, onboardSubtitle } from "@/components/primitives"
 import { Card } from "@nextui-org/card"
 import { Divider } from "@nextui-org/divider"
 import LoginAndRegistrationLayout from "../onboarding"
-import { ReactNode } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import { AppLogo } from "@/components/Icon"
 import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import Image from "next/image"
 import { siteImagesPath } from "@/config/images"
+import { useRouter } from "next/router"
 
 export const FormLayout = ({title, subtitle, children} : {title: string, subtitle: string, children:ReactNode } )=> {
     
+    const [routePath, setRoutPath] = useState("");
+
+    const route = useRouter();
+    useEffect(() => {
+        setRoutPath(route.pathname);
+    }, []);
+
     return (
         
         <LoginAndRegistrationLayout>
@@ -31,7 +39,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                             />
                         </Link>
                         {/* Link */}
-                        <Link className="text-[13px] font-bold text-md text-black underline" href={`${siteConfig.pagesPaths.onboading}`}>Create an account</Link>
+                        <Link className="text-[13px] font-bold text-md text-black underline" href={`${routePath === "/signin" ? siteConfig.pagesPaths.onboading : siteConfig.pagesPaths.signin }`}>{routePath === "/onboarding" ? "Sign In" : "Create an account"}</Link>
                     </div>
 
                     {/* Body */}
@@ -42,7 +50,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                         </div>
 
                         {/* Footer */}
-                        <div className="flex flex-col sm:hidden">
+                        <div className={`${routePath == "/signin" ? "flex flex-col sm:hidden" : "hidden" }`}>
                             <Link href={`/${siteConfig.pagesPaths.help}`} className="underline text-[13px] font-bold text-center text-black">Trouble signing in?</Link>
                         </div>
 
@@ -50,8 +58,8 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
 
                     {/* Footer */}
                     <div className="flex sm:hidden"></div>
-                    <Link href={'/'} className="hidden sm:flex justify-center underline text-[13px] font-bold text-center text-black">Trouble signing in?</Link>
-
+                    <Link href={'/'} className={`hidden ${routePath == 'signin' && "sm:flex"} justify-center underline text-[13px] font-bold text-center text-black`}>Trouble signing in?</Link>
+                    <div className="hidden sm:flex"></div>
                 </div>
 
                 {/* Right */}
