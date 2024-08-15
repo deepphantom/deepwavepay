@@ -3,13 +3,14 @@ import { onboardtitle } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import { FormLayout } from "@/layouts/onboard/form";
 import { Card, CardBody } from "@nextui-org/card";
-import { Checkbox } from "@nextui-org/react";
+import { Checkbox, Input } from "@nextui-org/react";
 import Link from "next/link";
 import { MdKeyboardBackspace, MdKeyboardArrowRight } from "react-icons/md";
 import { IoMdPerson } from "react-icons/io";
 import { PiBagFill } from "react-icons/pi";
 import { useAccountType } from "@/context/OnboadingContext";
 import { useRouter } from "next/router";
+import { EyeFilledIcon, EyeSlashFilledIcon } from "@/components/Icon";
 
 const IdentityOnboard = () => {
 
@@ -71,73 +72,125 @@ const IdentityOnboard = () => {
 
             {/* Heading */}
             <div className="text-center sm:text-center">
-            <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Let’s get started</h1>
-            <p className="text-black">Select your type of ss</p>
+            <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Confirm your details</h1>
+            <p className="text-black">Kindly enter your details correctly</p>
             </div>
 
+            {/* Form Comp */}
 
-            {/* Cards */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
             
-            <Card shadow="none" radius='sm' fullWidth className="bg-onboardWhite cursor-pointer">
-                <Link
-                href={{
-                    pathname: '/onboarding/identity',
-                    query: {name: "Olumide"} // the data
-                }}
-                >
-                <CardBody className="p-5 h-28">
-                    <div role="presentation" onClick={()=> {setIndividualCheckboxState(true), setCooperateCheckboxState(false)}} className="flex items-center h-full justify-between">
-                        <div className="flex items-center gap-2">
-                        <Checkbox
-                            radius="full" 
-                            isSelected={individualCheckboxState} 
-                            size='lg'
-                            defaultSelected
+                {/* Double Inputs  */}
+                <div className="flex flex-col gap-1">
+                    <p className="text-[15px] opacity-90">Full name</p>
+                    <div className="flex items-center gap-3">
+
+                        <Input
+                            required
+                            radius='sm'
+                            type='text'
+                            placeholder="John"
+                            style={{color: 'black'}}
+                            classNames={{
+                            input: [
+                            ],
+                            innerWrapper: [
+                            ],
+                            inputWrapper: [
+                                "bg-onboardWhite", // BG - color
+                                "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                                "group-data-[hover=true]:bg-onboardWhite", // Hover
+                                "dark:group-data-[focus=true]:text-black", // Text Color
+                            ],
+
+                            }}
                         />
-                        <div className="flex flex-col gap-1">
-                            <div className="flex items-center gap-2">
-                            <IoMdPerson size={18} color="black" />
-                            <p className="text-black text-md font-medium">Individual Account</p>
-                            </div>
-                            <p className="text-onboardFaintText font-normal text-[14px]">I want to open an Individual Account</p>
-                        </div>
-                        </div>
-                        <MdKeyboardArrowRight color="#555" size={20} />
-                    </div>
-                </CardBody>
-                </Link>
-            </Card>
-            
-            <Card radius='sm' shadow="none" fullWidth className="bg-onboardWhite cursor-pointer">
-                <CardBody className="p-5 h-28">
-                <div role="presentation" onClick={()=> {setCooperateCheckboxState(true), setIndividualCheckboxState(false)}} className="flex items-center h-full justify-between">
-                    <div className="flex items-center gap-2">
-                    <Checkbox 
-                        radius="full" 
-                        isSelected={cooperateCheckboxState} 
-                        size='lg'
-                        defaultSelected
-                    />
-                    <div className="flex flex-col gap-1">
-                        <div className="flex items-center gap-2">
-                        <PiBagFill size={18} color="black" />
-                        <p className="text-black text-md font-medium">Corperate Account</p>
-                        </div>
-                        <p className="text-onboardFaintText font-normal text-[14px]">I want to open a Corperate Account</p>
-                    </div>
-                    </div>
-                    <MdKeyboardArrowRight color="#555" size={20} />
-                </div>
-                </CardBody>
-            </Card>
+                        <Input
+                            radius='sm'
+                            type='text'
+                            placeholder="Doe"
+                            style={{color: 'black'}}
+                            classNames={{
+                            input: [
+                            ],
+                            innerWrapper: [
+                            ],
+                            inputWrapper: [
+                                "bg-onboardWhite", // BG - color
+                                "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                                "group-data-[hover=true]:bg-onboardWhite", // Hover
+                                "dark:group-data-[focus=true]:text-black", // Text Color
+                            ],
 
-            <Link href={`/${siteConfig.pagesPaths.signin}`}>
-                <div className="flex items-center gap-1 justify-end">
-                <MdKeyboardBackspace color="#555" size={20} />
-                <p className="text-[#555] text-[14px] font-normal">Back</p>
+                            }}
+                        />
+
+                    </div>
+                    <p className="text-[12px] px-2 font-normal opacity-60">Please ensure this is first and last name on your Government ID document.</p>
                 </div>
-            </Link>
+
+                {/* Single Inputs  */}
+                <div className="flex flex-col gap-3">
+                    <Input
+                        radius='sm'
+                        type='email'
+                        placeholder="Email"
+                        style={{color: 'black'}}
+                        classNames={{
+                        input: [
+                        ],
+                        innerWrapper: [
+                        ],
+                        inputWrapper: [
+                            "bg-onboardWhite", // BG - color
+                            "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                            "group-data-[hover=true]:bg-onboardWhite", // Hover
+                            "dark:group-data-[focus=true]:text-black", // Text Color
+                        ],
+
+                        }}
+                    />
+                </div>
+
+                {/* Single Inputs  */}
+                <div className="flex flex-col gap-3">
+                    <Input
+                        radius='sm'
+                        style={{color: 'black'}}
+                        classNames={{
+                            input: [
+                            ],
+                            innerWrapper: [
+                            ],
+                            inputWrapper: [
+                            "bg-onboardWhite", // BG - color
+                            "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                            "group-data-[hover=true]:bg-onboardWhite", // Hover
+                            "dark:group-data-[focus=true]:text-black", // Text Color
+                            ],
+
+                        }}
+                        endContent={
+                            <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
+                            {isVisible ? (
+                                <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                            ) : (
+                                <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                            )}
+                            </button>
+                        }
+                        type={isVisible ? "text" : "password"}
+                        placeholder="Password"
+                    />
+                </div>
+
+
+                <Link href={`/${siteConfig.pagesPaths.signin}`}>
+                    <div className="flex items-center gap-1 justify-end">
+                    <MdKeyboardBackspace color="#555" size={20} />
+                    <p className="text-[#555] text-[14px] font-normal">Back</p>
+                    </div>
+                </Link>
 
             </div>
 
