@@ -74,7 +74,7 @@ const IdentityOnboard = () => {
             
                 {/* Double Inputs  */}
                 <div className="flex flex-col gap-1">
-                    <p className="text-[15px] opacity-90">Full name</p>
+                    <p className="text-[15px] text-black opacity-90">Full name</p>
                     <div className="flex items-center gap-3">
 
                         <Input
@@ -120,12 +120,12 @@ const IdentityOnboard = () => {
                         />
 
                     </div>
-                    <p className="text-[12px] px-2 font-normal opacity-60">Please ensure this is first and last name on your Government ID document.</p>
+                    <p className="text-[12px] text-black px-2 font-normal opacity-60">Please ensure this is first and last name on your Government ID document.</p>
                 </div>
 
                 {/* Single Inputs  */}
                 <div className="flex flex-col gap-1">
-                    <p className="text-[15px] opacity-90">Email address</p>
+                    <p className="text-[15px] opacity-90 text-black">Email address</p>
                     <div className="flex flex-col gap-3">
                         <Input
                             radius='sm'
@@ -152,7 +152,7 @@ const IdentityOnboard = () => {
 
                 {/* Single Inputs  */}
                 <div className="flex flex-col gap-1">
-                    <p className="text-[15px] opacity-90">Enter a password</p>
+                    <p className="text-[15px] opacity-90 text-black">Enter a password</p>
                     <div className="flex flex-col gap-3">
                         <Input
                             radius='sm'
@@ -190,7 +190,7 @@ const IdentityOnboard = () => {
 
             <div className=" flex flex-col gap-5">
                 <Checkbox >
-                    <p className="text-[14px] font-normal opacity-80">I Agree with the <Link className="font-medium text-primary" href={`/${siteConfig.pagesPaths.help}`}>Terms</Link> and <Link className="font-medium text-primary" href={`/${siteConfig.pagesPaths.conditions}`} >Conditions</Link>.</p>
+                    <p className="text-[14px] font-normal opacity-80 text-black">I Agree with the <Link className="font-medium text-primary" href={`/${siteConfig.pagesPaths.help}`}>Terms</Link> and <Link className="font-medium text-primary" href={`/${siteConfig.pagesPaths.conditions}`} >Conditions</Link>.</p>
                 </Checkbox>
 
                 {/* Button */}
