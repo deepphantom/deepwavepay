@@ -39,7 +39,7 @@ export const FormLayout = ({title, subtitle, children} : {title: string, subtitl
                             />
                         </Link>
                         {/* Link */}
-                        <Link className="text-[13px] font-bold text-md text-black underline" href={`${routePath === "/signin" ? siteConfig.pagesPaths.onboading : siteConfig.pagesPaths.signin }`}>{routePath === "/signin" ? "Create an account" : "Sign In"}</Link>
+                        <Link className="text-[13px] font-bold text-md text-black underline" href={`/${routePath === "/signin" ? siteConfig.pagesPaths.onboading : siteConfig.pagesPaths.signin }`}>{routePath === "/signin" ? "Create an account" : "Sign In"}</Link>
                     </div>
 
                     {/* Body */}
