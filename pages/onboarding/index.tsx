@@ -8,12 +8,17 @@ import React, { useEffect, useState } from "react";
 import { MdKeyboardBackspace, MdKeyboardArrowRight } from "react-icons/md";
 import { IoMdPerson } from "react-icons/io";
 import { PiBagFill } from "react-icons/pi";
+import { useAccountType } from "@/context/OnboadingContext";
+import { useRouter } from "next/router";
 
 export default function OnboardingPage() {
 
+  // Hook
+  const { setAccountType } = useAccountType();
+  const router = useRouter();
+
   // State
   const [isVisible, setIsVisible] = React.useState(false);
-  const toggleVisibility = () => setIsVisible(!isVisible);
   const [individualCheckboxState, setIndividualCheckboxState] = useState(false);
   const [cooperateCheckboxState, setCooperateCheckboxState] = useState(false);
 
@@ -40,7 +45,13 @@ export default function OnboardingPage() {
     // Clean up the event listener on component unmount
     return () => window.removeEventListener('resize', updateDimensions);
   }, []);
-  
+
+
+  const Navigate = (type:any)=> {
+    setAccountType(type)
+    router.push(`/${siteConfig.pagesPaths.identity}`)
+  }
+
 
   return (
     <FormLayout 
@@ -60,26 +71,26 @@ export default function OnboardingPage() {
         <div className="flex flex-col gap-4">
           
           <Card shadow="none" radius='sm' fullWidth className="bg-onboardWhite cursor-pointer">
-            <CardBody className="p-5 h-28">
-              <div role="presentation" onClick={()=> {setIndividualCheckboxState(true), setCooperateCheckboxState(false)}} className="flex items-center h-full justify-between">
-                <div className="flex items-center gap-2">
-                  <Checkbox 
-                    radius="full" 
-                    isSelected={individualCheckboxState} 
-                    size='lg'
-                    defaultSelected
-                  />
-                  <div className="flex flex-col gap-1">
+              <CardBody className="p-5 h-28">
+                  <div role="presentation" onClick={()=> {setIndividualCheckboxState(true), Navigate("individual"), setCooperateCheckboxState(false)}} className="flex items-center h-full justify-between">
                     <div className="flex items-center gap-2">
-                      <IoMdPerson size={18} color="black" />
-                      <p className="text-black text-md font-medium">Individual Account</p>
+                      <Checkbox
+                        radius="full" 
+                        isSelected={individualCheckboxState} 
+                        size='lg'
+                        defaultSelected
+                      />
+                      <div className="flex flex-col gap-1">
+                        <div className="flex items-center gap-2">
+                          <IoMdPerson size={18} color="black" />
+                          <p className="text-black text-md font-medium">Individual Account</p>
+                        </div>
+                        <p className="text-onboardFaintText font-normal text-[14px]">I want to open an Individual Account</p>
+                      </div>
                     </div>
-                    <p className="text-onboardFaintText font-normal text-[14px]">I want to open an Individual Account</p>
+                    <MdKeyboardArrowRight color="#555" size={20} />
                   </div>
-                </div>
-                <MdKeyboardArrowRight color="#555" size={20} />
-              </div>
-            </CardBody>
+              </CardBody>
           </Card>
           
           <Card radius='sm' shadow="none" fullWidth className="bg-onboardWhite cursor-pointer">
@@ -120,4 +131,5 @@ export default function OnboardingPage() {
       </div>
     </FormLayout>
   );
+
 }

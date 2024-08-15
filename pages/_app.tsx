@@ -8,6 +8,7 @@ import { fontSans, fontMono } from "@/config/fonts";
 import "@/styles/globals.css";
 import { Progress } from "@nextui-org/progress";
 import { useState, useEffect } from "react";
+import { OnboardingProvider } from "@/context/OnboadingContext";
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -36,7 +37,9 @@ export default function App({ Component, pageProps }: AppProps) {
         {loading && (
           <Progress size="sm" isIndeterminate aria-label="Loading..."/>
         )}
-        <Component {...pageProps} />
+        <OnboardingProvider>
+          <Component {...pageProps} />
+        </OnboardingProvider>
       </NextThemesProvider>
     </NextUIProvider>
   );
