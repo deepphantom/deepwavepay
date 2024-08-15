@@ -71,7 +71,9 @@ export const siteConfig = {
     signin: "signin",
     onboading: "onboarding",
     help: "help",
-    identity: "onboarding/identity"
+    identity: "onboarding/identity",
+    terms: "about/terms",
+    conditions: "about/conditions"
   }
 
 };

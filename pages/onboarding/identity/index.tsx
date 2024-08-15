@@ -2,15 +2,12 @@ import React, { useEffect, useState } from "react";
 import { onboardtitle } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import { FormLayout } from "@/layouts/onboard/form";
-import { Card, CardBody } from "@nextui-org/card";
-import { Checkbox, Input } from "@nextui-org/react";
+import { Button, Checkbox, Input } from "@nextui-org/react";
 import Link from "next/link";
-import { MdKeyboardBackspace, MdKeyboardArrowRight } from "react-icons/md";
-import { IoMdPerson } from "react-icons/io";
-import { PiBagFill } from "react-icons/pi";
 import { useAccountType } from "@/context/OnboadingContext";
 import { useRouter } from "next/router";
 import { EyeFilledIcon, EyeSlashFilledIcon } from "@/components/Icon";
+
 
 const IdentityOnboard = () => {
 
@@ -25,15 +22,11 @@ const IdentityOnboard = () => {
             setIsLoading(false);
         }
     }, [accountType, router]);
-
     
     // State
     const [isVisible, setIsVisible] = React.useState(false);
     const toggleVisibility = () => setIsVisible(!isVisible);
-    const [individualCheckboxState, setIndividualCheckboxState] = useState(false);
-    const [cooperateCheckboxState, setCooperateCheckboxState] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-
 
     const [dimensions, setDimensions] = useState({ 
         width: 0, 
@@ -72,12 +65,11 @@ const IdentityOnboard = () => {
 
             {/* Heading */}
             <div className="text-center sm:text-center">
-            <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Confirm your details</h1>
-            <p className="text-black">Kindly enter your details correctly</p>
+                <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Confirm your details</h1>
+                <p className="text-black">Kindly enter your details correctly</p>
             </div>
 
             {/* Form Comp */}
-
             <div className="flex flex-col gap-5">
             
                 {/* Double Inputs  */}
@@ -97,6 +89,7 @@ const IdentityOnboard = () => {
                             innerWrapper: [
                             ],
                             inputWrapper: [
+                                "h-[45px]",
                                 "bg-onboardWhite", // BG - color
                                 "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
                                 "group-data-[hover=true]:bg-onboardWhite", // Hover
@@ -116,6 +109,7 @@ const IdentityOnboard = () => {
                             innerWrapper: [
                             ],
                             inputWrapper: [
+                                "h-[45px]",
                                 "bg-onboardWhite", // BG - color
                                 "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
                                 "group-data-[hover=true]:bg-onboardWhite", // Hover
@@ -130,72 +124,80 @@ const IdentityOnboard = () => {
                 </div>
 
                 {/* Single Inputs  */}
-                <div className="flex flex-col gap-3">
-                    <Input
-                        radius='sm'
-                        type='email'
-                        placeholder="Email"
-                        style={{color: 'black'}}
-                        classNames={{
-                        input: [
-                        ],
-                        innerWrapper: [
-                        ],
-                        inputWrapper: [
-                            "bg-onboardWhite", // BG - color
-                            "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
-                            "group-data-[hover=true]:bg-onboardWhite", // Hover
-                            "dark:group-data-[focus=true]:text-black", // Text Color
-                        ],
-
-                        }}
-                    />
-                </div>
-
-                {/* Single Inputs  */}
-                <div className="flex flex-col gap-3">
-                    <Input
-                        radius='sm'
-                        style={{color: 'black'}}
-                        classNames={{
+                <div className="flex flex-col gap-1">
+                    <p className="text-[15px] opacity-90">Email address</p>
+                    <div className="flex flex-col gap-3">
+                        <Input
+                            radius='sm'
+                            type='email'
+                            placeholder="example@xyz.com"
+                            style={{color: 'black'}}
+                            classNames={{
                             input: [
                             ],
                             innerWrapper: [
                             ],
                             inputWrapper: [
-                            "bg-onboardWhite", // BG - color
-                            "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
-                            "group-data-[hover=true]:bg-onboardWhite", // Hover
-                            "dark:group-data-[focus=true]:text-black", // Text Color
+                                "h-[45px]",
+                                "bg-onboardWhite", // BG - color
+                                "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                                "group-data-[hover=true]:bg-onboardWhite", // Hover
+                                "dark:group-data-[focus=true]:text-black", // Text Color
                             ],
 
-                        }}
-                        endContent={
-                            <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
-                            {isVisible ? (
-                                <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                            ) : (
-                                <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                            )}
-                            </button>
-                        }
-                        type={isVisible ? "text" : "password"}
-                        placeholder="Password"
-                    />
+                            }}
+                        />
+                    </div>
                 </div>
 
+                {/* Single Inputs  */}
+                <div className="flex flex-col gap-1">
+                    <p className="text-[15px] opacity-90">Enter a password</p>
+                    <div className="flex flex-col gap-3">
+                        <Input
+                            radius='sm'
+                            style={{color: 'black'}}
+                            classNames={{
+                                input: [
+                                ],
+                                innerWrapper: [
+                                ],
+                                inputWrapper: [
+                                    "h-[45px]",
+                                    "bg-onboardWhite", // BG - color
+                                    "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                                    "group-data-[hover=true]:bg-onboardWhite", // Hover
+                                    "dark:group-data-[focus=true]:text-black", // Text Color
+                                ],
 
-                <Link href={`/${siteConfig.pagesPaths.signin}`}>
-                    <div className="flex items-center gap-1 justify-end">
-                    <MdKeyboardBackspace color="#555" size={20} />
-                    <p className="text-[#555] text-[14px] font-normal">Back</p>
+                            }}
+                            endContent={
+                                <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
+                                {isVisible ? (
+                                    <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                                ) : (
+                                    <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                                )}
+                                </button>
+                            }
+                            type={isVisible ? "text" : "password"}
+                            placeholder="••••••••"
+                        />
                     </div>
-                </Link>
+                </div>
 
             </div>
 
-            <div></div>
+            <div className=" flex flex-col gap-5">
+                <Checkbox >
+                    <p className="text-[14px] font-normal opacity-80">I Agree with the <Link className="font-medium text-primary" href={`/${siteConfig.pagesPaths.help}`}>Terms</Link> and <Link className="font-medium text-primary" href={`/${siteConfig.pagesPaths.conditions}`} >Conditions</Link>.</p>
+                </Checkbox>
 
+                {/* Button */}
+                <Button radius="sm" className="h-[45px] bg-primary text-white font-medium" fullWidth>Create Account</Button>  
+            </div>
+
+            <div></div>
 
         </div>
         </FormLayout>

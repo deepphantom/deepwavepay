@@ -87,6 +87,7 @@ export default function SignInPage() {
               innerWrapper: [
               ],
               inputWrapper: [
+                "h-[45px]",
                 "bg-onboardWhite", // BG - color
                 "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
                 "group-data-[hover=true]:bg-onboardWhite", // Hover
@@ -106,6 +107,7 @@ export default function SignInPage() {
                 innerWrapper: [
                 ],
                 inputWrapper: [
+                  "h-[45px]",
                   "bg-onboardWhite", // BG - color
                   "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
                   "group-data-[hover=true]:bg-onboardWhite", // Hover
