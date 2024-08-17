@@ -185,7 +185,7 @@ const IdentityOnboard = () => {
                             placeholder: (provided) => ({
                                 ...provided,
                                 color: 'black',
-                                opacity: 0.5
+                                // opacity: 0.5
                             }),
                         }}
                     />
