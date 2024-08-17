@@ -7,6 +7,8 @@ import Link from "next/link";
 import { useAccountType } from "@/context/OnboadingContext";
 import { useRouter } from "next/router";
 import { EyeFilledIcon, EyeSlashFilledIcon } from "@/components/Icon";
+import Select from "react-select";
+import { countryOptions } from "@/public/files/data/countries";
 
 
 const IdentityOnboard = () => {
@@ -14,6 +16,10 @@ const IdentityOnboard = () => {
     // Hooks
     const { accountType } = useAccountType();
     const router = useRouter();
+
+    // Ref
+    const myRef = React.createRef<HTMLDivElement>();
+
 
     useEffect(() => {
         if (!accountType) {
@@ -27,6 +33,9 @@ const IdentityOnboard = () => {
     const [isVisible, setIsVisible] = React.useState(false);
     const toggleVisibility = () => setIsVisible(!isVisible);
     const [isLoading, setIsLoading] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
+    // Default this to a country's code to preselect it
+    const [country, setCountry] = useState<any>(null);
 
     const [dimensions, setDimensions] = useState({ 
         width: 0, 
@@ -55,6 +64,7 @@ const IdentityOnboard = () => {
     if(isLoading){
         return <div></div>;
     }
+
 
     return (
         <FormLayout 
@@ -148,6 +158,37 @@ const IdentityOnboard = () => {
                             }}
                         />
                     </div>
+                </div>
+
+                {/* Country Selection */}
+                <div className="flex flex-col gap-1">
+                    <p className="text-[15px] opacity-90 text-black">Select your country</p>
+                    <Select
+                        className="basic-single"
+                        classNamePrefix="select"
+                        placeholder="Select your country"
+                        value={country}
+                        onChange={setCountry}
+                        options={countryOptions}
+                        styles={{
+                            control: (provided) => ({
+                                ...provided,
+                                height: '45px',
+                                backgroundColor: '#F2F2F4',
+                                // borderColor: 'var(--gray-300)',
+                                color: 'black',
+                            }),
+                            singleValue: (provided) => ({
+                                ...provided,
+                                color: 'black',
+                            }),
+                            placeholder: (provided) => ({
+                                ...provided,
+                                color: 'black',
+                                opacity: 0.5
+                            }),
+                        }}
+                    />
                 </div>
 
                 {/* Single Inputs  */}
