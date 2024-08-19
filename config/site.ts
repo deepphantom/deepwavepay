@@ -73,7 +73,8 @@ export const siteConfig = {
     help: "help",
     identity: "onboarding/identity",
     terms: "about/terms",
-    conditions: "about/conditions"
+    conditions: "about/conditions",
+    emailValidation: "onboarding/identity/validation/email"
   }
 
 };

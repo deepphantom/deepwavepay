@@ -178,6 +178,10 @@ const IdentityOnboard = () => {
                                 // borderColor: 'var(--gray-300)',
                                 color: 'black',
                             }),
+                            option: (provided) => ({
+                                ...provided,
+                                color: 'black'
+                            }),
                             singleValue: (provided) => ({
                                 ...provided,
                                 color: 'black',
@@ -235,7 +239,7 @@ const IdentityOnboard = () => {
                 </Checkbox>
 
                 {/* Button */}
-                <Button radius="sm" className="h-[45px] bg-primary text-white font-medium" fullWidth>Create Account</Button>  
+                <Button onClick={()=> router.push(`/${siteConfig.pagesPaths.emailValidation}`)} role="presentation" radius="sm" className="h-[45px] bg-primary text-white font-medium" fullWidth>Create Account</Button>  
             </div>
 
             <div></div>
