@@ -76,7 +76,7 @@ const EmailValidation = () => {
             {/* Heading */}
             <div className="text-center sm:text-center">
                 <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Email Validation</h1>
-                <p className="text-black">We'd like to validate your email</p>
+                <p className="text-black">We&apos;d like to validate your email</p>
             </div>
 
             {/* Form Comp */}
