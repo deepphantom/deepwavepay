@@ -74,7 +74,7 @@ const EmailValidation = () => {
         <div className={`flex w-full flex-col ${dimensions.height < 700 ? 'gap-5' : 'gap-8' }`}>
 
             {/* Heading */}
-            <div className="text-center sm:text-center">
+            <div className="text-left sm:text-center">
                 <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Email Validation</h1>
                 <p className="text-black">We&apos;d like to validate your email</p>
             </div>
@@ -84,7 +84,7 @@ const EmailValidation = () => {
             
                 {/* Single Inputs  */}
                 <div className="flex flex-col gap-1">
-                    <p className="text-[15px] opacity-90 text-black"> Email OTP</p>
+                    {/* <p className="text-[15px] opacity-90 text-black"> Email OTP</p> */}
                     <div className="flex flex-col gap-3">
                         <Input
                             radius='sm'
