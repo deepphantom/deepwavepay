@@ -21,14 +21,15 @@ const EmailValidation = () => {
     const myRef = React.createRef<HTMLDivElement>();
 
 
-    // useEffect(() => {
-    //     if (!accountType) {
-    //         router.push(`/${siteConfig.pagesPaths.onboading}`); // Redirect to create account page
-    //     }else {
-    //         setIsLoading(false);
-    //     }
-    // }, [accountType, router]);
+    useEffect(() => {
+        if (!accountType) {
+            router.push(`/${siteConfig.pagesPaths.onboading}`); // Redirect to create account page
+        }else {
+            setIsLoading(false);
+        }
+    }, [accountType, router]);
     
+
     // State
     const [isVisible, setIsVisible] = React.useState(false);
     const toggleVisibility = () => setIsVisible(!isVisible);
@@ -61,9 +62,9 @@ const EmailValidation = () => {
         return () => window.removeEventListener('resize', updateDimensions);
     }, []);
 
-    // if(isLoading){
-    //     return <div></div>;
-    // }
+    if(isLoading){
+        return <div></div>;
+    }
 
 
     return (
@@ -74,7 +75,7 @@ const EmailValidation = () => {
         <div className={`flex w-full flex-col ${dimensions.height < 700 ? 'gap-5' : 'gap-8' }`}>
 
             {/* Heading */}
-            <div className="text-left sm:text-center">
+            <div className="text-center sm:text-center">
                 <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Email Validation</h1>
                 <p className="text-black">We&apos;d like to validate your email</p>
             </div>
@@ -84,7 +85,7 @@ const EmailValidation = () => {
             
                 {/* Single Inputs  */}
                 <div className="flex flex-col gap-1">
-                    {/* <p className="text-[15px] opacity-90 text-black"> Email OTP</p> */}
+                    <p className="text-[15px] opacity-90 text-black"> Email OTP</p>
                     <div className="flex flex-col gap-3">
                         <Input
                             radius='sm'
@@ -116,7 +117,9 @@ const EmailValidation = () => {
 
             <div className="flex flex-col">
                 {/* Button */}
-                <Button radius="sm" className="h-[45px] bg-primary text-white font-medium" fullWidth>Verify OTP</Button>  
+                <Link href={`/${siteConfig.pagesPaths.dashboard}`} >
+                    <Button radius="sm" className="h-[45px] bg-primary text-white font-medium" fullWidth>Verify OTP</Button>  
+                </Link>
             </div>
 
             <div></div>

@@ -74,7 +74,8 @@ export const siteConfig = {
     identity: "onboarding/identity",
     terms: "about/terms",
     conditions: "about/conditions",
-    emailValidation: "onboarding/identity/validation/email"
+    emailValidation: "onboarding/identity/validation/email",
+    dashboard: "/dashboard"
   }
 
 };
