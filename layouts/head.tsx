@@ -7,7 +7,7 @@ interface HeadInterface {
   siteTitle: string;
 }
 
-export const Head = ({siteTitle}:HeadInterface) => {
+export const Head = ({ siteTitle }: HeadInterface) => {
   return (
     <NextHead>
       <title>{siteTitle}</title>

@@ -1,5 +1,5 @@
 import { Head } from "./head";
-import { NavBar } from "@/components/nav/NavBar";
+import { DashboardNavbar } from "@/components/Navbar/DashboardNavBar";
 import { siteConfig } from "@/config/site";
 
 export default function DefaultLayout({
@@ -9,12 +9,8 @@ export default function DefaultLayout({
 }) {
   return (
     <div className="relative flex flex-col h-screen">
-      <Head sitetitle={siteConfig.name} />
-      {/* <Navbar /> */}
-      <NavBar />
-      <main className="">
-        {children}
-      </main>
+      <Head siteTitle={siteConfig.name} />
+      <main className="">{children}</main>
     </div>
   );
 }

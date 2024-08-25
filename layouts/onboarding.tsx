@@ -8,9 +8,7 @@ export default function LoginAndRegistrationLayout({
   return (
     <div className="relative bg-onboardBg flex flex-col">
       <Head siteTitle="Welcome" />
-      <main className="h-[100%]">
-        {children}
-      </main>
+      <main className="h-[100%]">{children}</main>
     </div>
   );
 }

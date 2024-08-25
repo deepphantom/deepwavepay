@@ -11,23 +11,22 @@ import { useState, useEffect } from "react";
 import { OnboardingProvider } from "@/context/OnboadingContext";
 
 export default function App({ Component, pageProps }: AppProps) {
-
   const router = useRouter();
-  
+
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleRouteStart = () => setLoading(true);
     const handleRouteEnd = () => setLoading(false);
 
-    router.events.on('routeChangeStart', handleRouteStart);
-    router.events.on('routeChangeComplete', handleRouteEnd);
-    router.events.on('routeChangeError', handleRouteEnd);
+    router.events.on("routeChangeStart", handleRouteStart);
+    router.events.on("routeChangeComplete", handleRouteEnd);
+    router.events.on("routeChangeError", handleRouteEnd);
 
     return () => {
-      router.events.off('routeChangeStart', handleRouteStart);
-      router.events.off('routeChangeComplete', handleRouteEnd);
-      router.events.off('routeChangeError', handleRouteEnd);
+      router.events.off("routeChangeStart", handleRouteStart);
+      router.events.off("routeChangeComplete", handleRouteEnd);
+      router.events.off("routeChangeError", handleRouteEnd);
     };
   }, [router]);
 
@@ -35,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <NextUIProvider navigate={router.push}>
       <NextThemesProvider>
         {loading && (
-          <Progress size="sm" isIndeterminate aria-label="Loading..."/>
+          <Progress size="sm" isIndeterminate aria-label="Loading..." />
         )}
         <OnboardingProvider>
           <Component {...pageProps} />

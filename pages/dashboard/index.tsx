@@ -1,14 +1,96 @@
-import { title } from "@/components/primitives";
+import { DashboardNavbar } from "@/components/Navbar/DashboardNavBar";
 import DashboardLayout from "@/layouts/dashboard/dashboardlayout";
-import DefaultLayout from "@/layouts/default";
 
 export default function DashboardPage() {
   return (
     <DashboardLayout>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-        <div className="inline-block max-w-lg text-center justify-center">
-          <h1 className={title()}>Dashboard</h1>
-        </div>
+      <section className="">
+        <DashboardNavbar title="Dashboard" />
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+          assumenda, unde placeat perferendis consectetur explicabo autem. Hic
+          architecto, officiis dicta a aliquid vero distinctio, temporibus
+          voluptates ab, quia in voluptatem.
+        </p>
       </section>
     </DashboardLayout>
   );
