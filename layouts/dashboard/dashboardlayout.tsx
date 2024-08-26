@@ -12,7 +12,7 @@ export default function DashboardLayout({
   // Hooks
   const router = useRouter();
 
-  const [sideNavLeft, setSideNavLeft] = useState(`-left-2/3`);
+  const [sideNavLeft, setSideNavLeft] = useState(`-left-3/4`);
 
   function OpenSideNav() {
     setSideNavLeft(`left-0`);
