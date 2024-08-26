@@ -82,7 +82,7 @@ export const Sidebar = ({ CloseSideNav }: { CloseSideNav: () => void }) => {
       <div className="md:flex md:w-max lg:w-56 transition-all duration-500 ease-in-out">
         <nav className="px-2 lg:px-6 flex flex-col w-full items-center">
           {/* Nav Head */}
-          <div className="h-[100px] w-full flex items-center justify-between md:justify-center">
+          <div className="h-[100px] px-2 w-full flex items-center justify-between md:justify-center">
             {/* Profile */}
             <div className="flex items-center gap-3">
               {/* image */}
