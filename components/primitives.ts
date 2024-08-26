@@ -118,7 +118,7 @@ export const Dashboardtitle = tv({
     },
     size: {
       sm: "text-2xl sm:text-3xl",
-      md: "text-3xl leading-9",
+      md: "text-2xl sm:text-3xl leading-9",
       lg: "text-4xl lg:text-6xl",
     },
     fullWidth: {
@@ -142,4 +142,16 @@ export const Dashboardtitle = tv({
       class: "bg-clip-text text-transparent bg-gradient-to-b",
     },
   ],
+});
+
+export const DashboardSubtitle = tv({
+  base: "w-full md:w-1/2 my-0 text-sm text-default-500 block max-w-full",
+  variants: {
+    fullWidth: {
+      true: "!w-full",
+    },
+  },
+  defaultVariants: {
+    fullWidth: true,
+  },
 });
