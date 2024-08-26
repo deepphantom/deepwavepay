@@ -44,7 +44,7 @@ export default function DashboardLayout({
       <Head siteTitle="Dashboard" />
       <div className="flex flex-1 relative">
         <div
-          className={`h-screen w-[70%] transition-all duration-500 ease-in-out md:w-max absolute md:relative z-50 bg-background ${sideNavLeft} md:left-0 overflow-scroll scrollbar-hide`}
+          className={`h-screen w-[70%] transition-all duration-500 sm:duration-0 ease-in-out md:w-max absolute md:relative z-50 bg-background ${sideNavLeft} md:left-0 overflow-scroll scrollbar-hide`}
         >
           <Sidebar CloseSideNav={CloseSideNav} />
         </div>
