@@ -1,12 +1,11 @@
 import { DashboardNavbar } from "@/components/Navbar/DashboardNavBar";
 import DashboardLayout from "@/layouts/dashboard/dashboardlayout";
+import { Button } from "@nextui-org/button";
 
 export default function DashboardPage() {
   return (
     <DashboardLayout>
       <section className="">
-        <DashboardNavbar title="Dashboard" />
-
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
           assumenda, unde placeat perferendis consectetur explicabo autem. Hic

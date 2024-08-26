@@ -1,18 +1,32 @@
 import { DateToday } from "@/layouts/datetoday";
 import { DashboardSubtitle, Dashboardtitle, onboardtitle } from "../primitives";
 import { ThemeSwitch } from "../theme-switch";
-import { IoNotifications } from "react-icons/io5";
+import { IoMenuOutline, IoNotifications } from "react-icons/io5";
 import Image from "next/image";
 import { siteImagesPath } from "@/config/images";
+import { RiMenu3Fill } from "react-icons/ri";
 
-export const DashboardNavbar = ({ title }: { title: string }) => {
+export const DashboardNavbar = ({
+  title,
+  action,
+}: {
+  title: string;
+  action: () => void;
+}) => {
   return (
     <div className="h-[80px] sm:h-[100px] justify-between sticky top-0 bg-dashboardBg flex items-center">
-      <div className="flex flex-col">
-        <h1 className={Dashboardtitle({ size: "md" })}>{title}s</h1>
-        <p className={DashboardSubtitle()}>{DateToday}</p>
+      <div className="flex items-center gap-4">
+        <RiMenu3Fill
+          role="presentation"
+          onClick={action}
+          className="flex md:hidden cursor-pointer"
+          size={20}
+        />
+        <div>
+          <h1 className={Dashboardtitle({ size: "md" })}>{title}</h1>
+          <p className={DashboardSubtitle()}>{DateToday}</p>
+        </div>
       </div>
-
       <div className=" flex items-center gap-4">
         <div className="flex items-center gap-2">
           {/* Themeswitch */}

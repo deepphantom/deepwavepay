@@ -7,9 +7,7 @@ import DefaultLayout from "@/layouts/default";
 export default function DashboardPage() {
   return (
     <DashboardLayout>
-      <section className="bg-dashboardBg h-full">
-        <DashboardNavbar title="Help" />
-      </section>
+      <section className="bg-dashboardBg h-full"></section>
     </DashboardLayout>
   );
 }

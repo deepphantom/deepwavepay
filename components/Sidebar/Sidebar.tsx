@@ -1,5 +1,10 @@
+import { useState } from "react";
 import { useRouter } from "next/router";
-import { RiDashboardHorizontalFill, RiFileHistoryLine } from "react-icons/ri";
+import {
+  RiDashboardHorizontalFill,
+  RiFileHistoryLine,
+  RiMenu2Line,
+} from "react-icons/ri";
 import { MdOutlineAccountBalance } from "react-icons/md";
 import { HiMiniArrowsRightLeft } from "react-icons/hi2";
 import { TiLocationArrowOutline } from "react-icons/ti";
@@ -11,6 +16,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteImagesPath } from "@/config/images";
 import { useTheme } from "next-themes";
+import { RiMenu3Fill } from "react-icons/ri";
 
 interface LinkTypes {
   title: string;
@@ -68,15 +74,15 @@ const Links: LinkTypes[] = [
 
 export const Sidebar = () => {
   const router = useRouter();
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const currentPath = router.pathname;
 
   return (
     <aside className="min-h-screen">
-      <div className="w-0 hidden sm:flex sm:w-max lg:w-56 transition-all duration-500 ease-in-out">
+      <div className="md:flex md:w-max lg:w-56 transition-all duration-500 ease-in-out">
         <nav className="px-2 lg:px-6 flex flex-col w-full items-center">
           {/* Nav Head */}
-          <div className="h-[100px] flex items-center justify-center">
+          <div className="h-[100px] w-full flex items-center justify-center">
             <Link
               href="/dashboard"
               className={`${theme == "dark" && "filter invert"}`}
@@ -85,13 +91,13 @@ export const Sidebar = () => {
                 src={siteImagesPath.appLogo}
                 style={{ objectFit: "cover" }}
                 alt="sitelogo"
-                className="w-[110px] sm:w-[130px] hidden lg:flex"
+                className="w-[110px] flex md:w-[130px] md:hidden lg:flex"
               />
               <Image
                 src={siteImagesPath.appIcon}
                 style={{ objectFit: "cover" }}
                 alt="sitelogo"
-                className="w-[30px] flex lg:hidden"
+                className="w-[30px] hidden md:flex lg:hidden"
               />
             </Link>
           </div>
@@ -101,13 +107,13 @@ export const Sidebar = () => {
               <li key={link.path}>
                 <Link
                   href={link.path}
-                  className={`flex w-full cursor-pointer items-center gap-2 px-4 py-3 lg:py-2 rounded-lg ${
+                  className={`flex w-[80%] md:w-full cursor-pointer items-center gap-2 px-4 py-3 lg:py-2 rounded-lg ${
                     currentPath === link.path ? "bg-secondary text-black " : ""
                   }`}
                 >
                   {link.icon}
                   <p
-                    className={`hidden lg:flex text-sm font-medium ${currentPath === link.path ? "" : ""}`}
+                    className={`md:hidden lg:flex text-sm font-medium ${currentPath === link.path ? "" : ""}`}
                   >
                     {link.title}
                   </p>
