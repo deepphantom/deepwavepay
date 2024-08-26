@@ -83,7 +83,7 @@ export const Sidebar = () => {
         <nav className="px-2 lg:px-6 flex flex-col w-full items-center">
           {/* Nav Head */}
           <div className="h-[100px] w-full flex items-center justify-center">
-            <Link
+            {/* <Link
               href="/dashboard"
               className={`${theme == "dark" && "filter invert"}`}
             >
@@ -99,7 +99,22 @@ export const Sidebar = () => {
                 alt="sitelogo"
                 className="w-[30px] hidden md:flex lg:hidden"
               />
-            </Link>
+            </Link> */}
+            {/* Profile */}
+            <div className="flex items-center gap-3">
+              {/* image */}
+              <Image
+                src={siteImagesPath.lady2}
+                style={{ objectFit: "cover" }}
+                alt="profilepic"
+                quality={50}
+                className="rounded-full h-[37px] sm:h-[43px] w-[37px] sm:w-[43px] flex items-center justify-center"
+              />
+              <div className="hidden lg:flex flex-col">
+                <h1 className="font-semibold text-[14px]">Nora Watson</h1>
+                <p className="text-[10px] mt-[-2px] opacity-60">ID:D2K4SN7SS</p>
+              </div>
+            </div>
           </div>
 
           <ul className="w-full flex flex-col gap-3">
