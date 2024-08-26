@@ -19,7 +19,7 @@ export default function DashboardLayout({
   }
 
   function CloseSideNav() {
-    setSideNavLeft(`-left-2/3`);
+    setSideNavLeft(`-left-3/4`);
   }
 
   // Determine the title based on the pathname
