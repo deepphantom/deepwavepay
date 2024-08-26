@@ -72,7 +72,7 @@ const Links: LinkTypes[] = [
   },
 ];
 
-export const Sidebar = () => {
+export const Sidebar = ({ CloseSideNav }: { CloseSideNav: () => void }) => {
   const router = useRouter();
   const { theme } = useTheme();
   const currentPath = router.pathname;
@@ -82,24 +82,7 @@ export const Sidebar = () => {
       <div className="md:flex md:w-max lg:w-56 transition-all duration-500 ease-in-out">
         <nav className="px-2 lg:px-6 flex flex-col w-full items-center">
           {/* Nav Head */}
-          <div className="h-[100px] w-full flex items-center justify-center">
-            {/* <Link
-              href="/dashboard"
-              className={`${theme == "dark" && "filter invert"}`}
-            >
-              <Image
-                src={siteImagesPath.appLogo}
-                style={{ objectFit: "cover" }}
-                alt="sitelogo"
-                className="w-[110px] flex md:w-[130px] md:hidden lg:flex"
-              />
-              <Image
-                src={siteImagesPath.appIcon}
-                style={{ objectFit: "cover" }}
-                alt="sitelogo"
-                className="w-[30px] hidden md:flex lg:hidden"
-              />
-            </Link> */}
+          <div className="h-[100px] w-full flex items-center justify-between md:justify-center">
             {/* Profile */}
             <div className="flex items-center gap-3">
               {/* image */}
@@ -110,10 +93,18 @@ export const Sidebar = () => {
                 quality={50}
                 className="rounded-full h-[37px] sm:h-[43px] w-[37px] sm:w-[43px] flex items-center justify-center"
               />
-              <div className="hidden lg:flex flex-col">
+              <div className=" md:hidden lg:flex flex-col">
                 <h1 className="font-semibold text-[14px]">Nora Watson</h1>
                 <p className="text-[10px] mt-[-2px] opacity-60">ID:D2K4SN7SS</p>
               </div>
+            </div>
+            <div className="flex md:hidden">
+              <RiMenu2Line
+                role="presentation"
+                className=" cursor-pointer"
+                size={20}
+                onClick={CloseSideNav}
+              />
             </div>
           </div>
 

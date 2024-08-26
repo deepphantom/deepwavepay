@@ -44,9 +44,9 @@ export default function DashboardLayout({
       <Head siteTitle="Dashboard" />
       <div className="flex flex-1 relative">
         <div
-          className={`h-screen w-[60%] md:w-max absolute md:relative z-50 bg-background ${sideNavLeft} md:left-0 overflow-scroll scrollbar-hide`}
+          className={`h-screen w-[60%] transition-all duration-500 ease-in-out md:w-max absolute md:relative z-50 bg-background ${sideNavLeft} md:left-0 overflow-scroll scrollbar-hide`}
         >
-          <Sidebar />
+          <Sidebar CloseSideNav={CloseSideNav} />
         </div>
         <div className="px-5 h-screen overflow-scroll scrollbar-hide lg:px-10 flex-1 bg-dashboardBg">
           <DashboardNavbar action={OpenSideNav} title={getTitle()} />
