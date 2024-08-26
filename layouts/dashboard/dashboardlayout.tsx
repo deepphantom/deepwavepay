@@ -12,14 +12,14 @@ export default function DashboardLayout({
   // Hooks
   const router = useRouter();
 
-  const [sideNavLeft, setSideNavLeft] = useState(`-left-3/4`);
+  const [sideNavLeft, setSideNavLeft] = useState(`-left-[600px]`);
 
   function OpenSideNav() {
     setSideNavLeft(`left-0`);
   }
 
   function CloseSideNav() {
-    setSideNavLeft(`-left-3/4`);
+    setSideNavLeft(`-left-[600px]`);
   }
 
   // Determine the title based on the pathname
