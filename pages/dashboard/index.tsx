@@ -109,7 +109,7 @@ export default function DashboardPage() {
               <div className="flex w-full gap-3">
                 <select
                   aria-label="sending"
-                  className="bg-white outline-none w-[50%] h-[45px] px-1 rounded-md text-black"
+                  className="bg-onboardWhite outline-none w-[50%] h-[48px] px-1 rounded-md text-black"
                 >
                   {countries.map((country) => (
                     <option key={country.code} className="text-black">
@@ -119,7 +119,7 @@ export default function DashboardPage() {
                 </select>
                 <select
                   aria-label="receiving"
-                  className="bg-white outline-none w-[50%] h-[45px] px-1 rounded-md text-black"
+                  className="bg-onboardWhite outline-none w-[50%] h-[48px] px-1 rounded-md text-black"
                 >
                   {countriesLocal.map((country) => (
                     <option key={country.code} className="text-black">
@@ -183,7 +183,7 @@ export default function DashboardPage() {
             </div>
           </div>
           <div className="w-full h-[220px] bg-red-950 rounded-xl"></div>
-          <div className="w-full h-[300px] bg-red-950 mb-8 rounded-xl"></div>
+          <div className="w-full h-[300px] bg-red-950 mb-20 rounded-xl"></div>
         </div>
       </section>
     </DashboardLayout>
