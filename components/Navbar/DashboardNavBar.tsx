@@ -14,7 +14,7 @@ export const DashboardNavbar = ({
   action: () => void;
 }) => {
   return (
-    <div className="h-[80px] z-20 sm:h-[100px] justify-between sticky top-0 bg-dashboardBg flex items-center">
+    <div className="h-[80px] z-30 sm:h-[100px] justify-between sticky top-0 bg-dashboardBg flex items-center">
       <div className="flex items-center gap-4">
         <RiMenu3Fill
           role="presentation"

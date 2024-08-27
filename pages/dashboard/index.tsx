@@ -101,13 +101,14 @@ export default function DashboardPage() {
               {/* Country */}
               <div className="flex w-full gap-3">
                 <Select
+                  classNames={{}}
                   radius="sm"
                   placeholder={"🇬🇧 United Kingdom"}
                   size="lg"
                   className="w-[50%]"
                 >
                   {countries.map((country) => (
-                    <SelectItem key={country.code}>
+                    <SelectItem className="" key={country.code}>
                       {country.flag + " " + country.name}
                     </SelectItem>
                   ))}
@@ -119,7 +120,7 @@ export default function DashboardPage() {
                   className="w-[50%]"
                 >
                   {countriesLocal.map((country) => (
-                    <SelectItem key={country.code}>
+                    <SelectItem className="" key={country.code}>
                       {country.flag + " " + country.name}
                     </SelectItem>
                   ))}
