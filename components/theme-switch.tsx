@@ -3,6 +3,8 @@ import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@nextui-org/switch";
 import { useTheme } from "next-themes";
 import { CgDarkMode } from "react-icons/cg";
+import { GiMoon } from "react-icons/gi";
+
 import clsx from "clsx";
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
@@ -74,7 +76,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
           ),
         })}
       >
-        {isSelected ? <CgDarkMode size={18} /> : <SunFilledIcon size={18} />}
+        {isSelected ? <GiMoon size={18} /> : <SunFilledIcon size={18} />}
       </div>
     </Component>
   );
