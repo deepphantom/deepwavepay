@@ -102,7 +102,7 @@ export default function DashboardPage() {
                   className="bg-white outline-none w-[50%] h-[45px] px-1 rounded-md text-black"
                 >
                   {countries.map((country) => (
-                    <option className="text-black">
+                    <option key={country.code} className="text-black">
                       {country.flag + " " + country.name}
                     </option>
                   ))}
@@ -112,7 +112,7 @@ export default function DashboardPage() {
                   className="bg-white outline-none w-[50%] h-[45px] px-1 rounded-md text-black"
                 >
                   {countriesLocal.map((country) => (
-                    <option className="text-black">
+                    <option key={country.code} className="text-black">
                       {country.flag + " " + country.name}
                     </option>
                   ))}
