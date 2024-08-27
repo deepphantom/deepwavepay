@@ -67,7 +67,7 @@ export default function DashboardPage() {
         <div className="mt-4 xl:mt-0 xl:basis-[22%] flex flex-wrap lg:flex-nowrap xl:flex-wrap gap-4 w-full rounded-xl">
           <div className="w-full h-[250px] bg-red-950 rounded-xl"></div>
           <div className="w-full h-[220px] bg-red-950 rounded-xl"></div>
-          <div className="w-full h-[300px] bg-red-950 rounded-xl"></div>
+          <div className="w-full h-[300px] bg-red-950 mb-8 rounded-xl"></div>
         </div>
       </section>
     </DashboardLayout>
