@@ -58,7 +58,9 @@ export const DashboardNavbar = ({
           />
           <div className="hidden sm:flex flex-col">
             <h1 className="font-semibold text-[14px]">Nora Watson</h1>
-            <p className="text-[10px] mt-[-2px] opacity-60">ID:D2K4SN7SS</p>
+            <p className="text-[10px] mt-[-2px] font-medium">
+              ID:<span className="opacity-60">D2K4SN7SS</span>
+            </p>
           </div>
         </div>
       </div>

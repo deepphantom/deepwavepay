@@ -17,6 +17,7 @@ import Image from "next/image";
 import { siteImagesPath } from "@/config/images";
 import { useTheme } from "next-themes";
 import { RiMenu3Fill } from "react-icons/ri";
+import { Divider } from "@nextui-org/divider";
 
 interface LinkTypes {
   title: string;
@@ -96,8 +97,8 @@ export const Sidebar = ({ CloseSideNav }: { CloseSideNav: () => void }) => {
                 />
                 <div className=" md:hidden lg:flex flex-col">
                   <h1 className="font-semibold text-[14px]">Nora Watson</h1>
-                  <p className="text-[10px] mt-[-2px] opacity-60">
-                    ID:D2K4SN7SS
+                  <p className="text-[10px] mt-[-2px] font-medium">
+                    ID:<span className="opacity-60">D2K4SN7SS</span>
                   </p>
                 </div>
               </div>
