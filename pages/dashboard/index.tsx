@@ -4,6 +4,33 @@ import DashboardLayout from "@/layouts/dashboard/dashboardlayout";
 import { MdAccountBalanceWallet } from "react-icons/md";
 import { FaMoneyBillWave } from "react-icons/fa6";
 import { RiCoinsFill } from "react-icons/ri";
+import PropTypes from "prop-types";
+import countries from "../../public/files/data/countryAndFlag.json";
+import countriesLocal from "../../public/files/data/countryAndFlagLocal.json";
+import { Input, Select, SelectItem } from "@nextui-org/react";
+
+const CountrySelect = (props: any) => {
+  const { option, ...rest } = props;
+  return (
+    <Select {...rest} label="Country" className="">
+      {countries.map((country) => (
+        <SelectItem key=""> {option(country)} </SelectItem>
+      ))}
+    </Select>
+  );
+};
+
+CountrySelect.propTypes = {
+  option: PropTypes.func,
+};
+
+CountrySelect.defaultProps = {
+  option: ({ cca2, flag, name }: any) => (
+    <option value={cca2} key={cca2}>
+      {`${flag} ${name}`}
+    </option>
+  ),
+};
 
 export default function DashboardPage() {
   return (
@@ -65,7 +92,90 @@ export default function DashboardPage() {
         </div>
         {/* Side Content */}
         <div className="mt-4 xl:mt-0 xl:basis-[22%] flex flex-wrap lg:flex-nowrap xl:flex-wrap gap-4 w-full rounded-xl">
-          <div className="w-full h-[250px] bg-red-950 rounded-xl"></div>
+          <div className="w-full h-[350px] flex flex-col justify-between bg-[#1E9AA3] p-5 rounded-xl">
+            {/* <p className="text-white font-semibold text-[18px]">
+              Currency Converter
+            </p> */}
+
+            <div className="flex items-center w-full justify-between">
+              {/* Country */}
+              <div className="flex w-full gap-3">
+                <Select
+                  radius="sm"
+                  placeholder={"🇬🇧 United Kingdom"}
+                  size="lg"
+                  className="w-[50%]"
+                >
+                  {countries.map((country) => (
+                    <SelectItem key={country.code}>
+                      {country.flag + " " + country.name}
+                    </SelectItem>
+                  ))}
+                </Select>
+                <Select
+                  radius="sm"
+                  placeholder={"🇳🇬 Nigeria"}
+                  size="lg"
+                  className="w-[50%]"
+                >
+                  {countriesLocal.map((country) => (
+                    <SelectItem key={country.code}>
+                      {country.flag + " " + country.name}
+                    </SelectItem>
+                  ))}
+                </Select>
+              </div>
+            </div>
+
+            {/* Input */}
+            <div className=" w-full flex flex-col gap-3">
+              <Input
+                type="number"
+                label="You send (GBP)"
+                value={"1"}
+                size="lg"
+                radius="sm"
+                style={{ color: "black" }}
+                labelPlacement="outside"
+                classNames={{
+                  input: [],
+                  innerWrapper: [],
+                  inputWrapper: [
+                    "h-[45px]",
+                    "bg-onboardWhite", // BG - color
+                    "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                    "group-data-[hover=true]:bg-onboardWhite", // Hover
+                    "dark:group-data-[focus=true]:text-black", // Text Color
+                  ],
+                }}
+              />
+              <Input
+                type="number"
+                label="You receive (NGN)"
+                value={"1000"}
+                style={{ color: "black" }}
+                size="lg"
+                radius="sm"
+                labelPlacement="outside"
+                classNames={{
+                  input: [],
+                  innerWrapper: [],
+                  inputWrapper: [
+                    "h-[45px]",
+                    "bg-onboardWhite", // BG - color
+                    "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                    "group-data-[hover=true]:bg-onboardWhite", // Hover
+                    "dark:group-data-[focus=true]:text-black", // Text Color
+                  ],
+                }}
+              />
+            </div>
+
+            <div>
+              <p className="text-[14px] text-white">Rate: $1 = 450.00 NGN</p>
+              <p className="text-[14px] text-white">No transfer fees</p>
+            </div>
+          </div>
           <div className="w-full h-[220px] bg-red-950 rounded-xl"></div>
           <div className="w-full h-[300px] bg-red-950 mb-8 rounded-xl"></div>
         </div>

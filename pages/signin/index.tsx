@@ -4,21 +4,20 @@ import Link from "next/link";
 import { Input } from "@nextui-org/react";
 import React, { useEffect, useState } from "react";
 import { EyeFilledIcon, EyeSlashFilledIcon } from "@/components/Icon";
-import {Divider} from "@nextui-org/divider";
+import { Divider } from "@nextui-org/divider";
 import { Button } from "@nextui-org/button";
 import { FormLayout } from "@/layouts/onboard/form";
 import { IoLogoGoogle } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 
 export default function SignInPage() {
-
   // State
   const [isVisible, setIsVisible] = React.useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-  const [dimensions, setDimensions] = useState({ 
-    width: 0, 
-    height: 0 
+  const [dimensions, setDimensions] = useState({
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
@@ -26,7 +25,7 @@ export default function SignInPage() {
     const updateDimensions = () => {
       setDimensions({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       });
     };
 
@@ -34,38 +33,40 @@ export default function SignInPage() {
     updateDimensions();
 
     // Update dimensions on window resize
-    window.addEventListener('resize', updateDimensions);
+    window.addEventListener("resize", updateDimensions);
 
     // Clean up the event listener on component unmount
-    return () => window.removeEventListener('resize', updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
   return (
-    
-    <FormLayout 
-      title="Sign In"
-      subtitle="Welcome back! Continue"
-    >
-      <div className={`flex w-full flex-col ${dimensions.height < 700 ? 'gap-5' : 'gap-8' }`}>
-
+    <FormLayout title="Sign In" subtitle="Welcome back! Continue">
+      <div
+        className={`flex w-full flex-col ${dimensions.height < 700 ? "gap-5" : "gap-8"}`}
+      >
         {/* Heading */}
         <div className="text-center sm:text-center">
-          <h1 className={`${onboardtitle({size: 'sm'})} text-black`}>Welcome back</h1>
+          <h1 className={`${onboardtitle({ size: "sm" })} text-black`}>
+            Welcome back
+          </h1>
           <p className="text-black">Kindly enter your Login details</p>
         </div>
 
         {/* Button */}
         <div className="flex flex-col gap-3">
-            <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-onboardWhite rounded-lg">
-              <IoLogoGoogle size={20} color="black" />
-              <p className="font-bold text-[14px] text-black">Log in with Google </p>
-            </div>
-            <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-onboardWhite rounded-lg">
-              <FaGithub size={20} color='black' />
-              <p className="font-bold text-[14px] text-black">Log in with GitHub </p>
-            </div>
+          <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-onboardWhite rounded-lg">
+            <IoLogoGoogle size={20} color="black" />
+            <p className="font-bold text-[14px] text-black">
+              Log in with Google{" "}
+            </p>
+          </div>
+          <div className="w-full cursor-pointer flex items-center justify-center gap-2 h-[42px] bg-onboardWhite rounded-lg">
+            <FaGithub size={20} color="black" />
+            <p className="font-bold text-[14px] text-black">
+              Log in with GitHub{" "}
+            </p>
+          </div>
         </div>
-
 
         <div className="flex w-full items-center justify-between">
           <Divider className="basis-[43%] bg-[grey]" />
@@ -75,17 +76,14 @@ export default function SignInPage() {
 
         {/* Input Forgot Password */}
         <div className="flex flex-col gap-3">
-
           <Input
-            radius='sm'
-            type='email'
+            radius="sm"
+            type="email"
             placeholder="Email"
-            style={{color: 'black'}}
+            style={{ color: "black" }}
             classNames={{
-              input: [
-              ],
-              innerWrapper: [
-              ],
+              input: [],
+              innerWrapper: [],
               inputWrapper: [
                 "h-[45px]",
                 "bg-onboardWhite", // BG - color
@@ -93,19 +91,16 @@ export default function SignInPage() {
                 "group-data-[hover=true]:bg-onboardWhite", // Hover
                 "dark:group-data-[focus=true]:text-black", // Text Color
               ],
-
             }}
           />
 
           <div>
             <Input
-              radius='sm'
-              style={{color: 'black'}}
+              radius="sm"
+              style={{ color: "black" }}
               classNames={{
-                input: [
-                ],
-                innerWrapper: [
-                ],
+                input: [],
+                innerWrapper: [],
                 inputWrapper: [
                   "h-[45px]",
                   "bg-onboardWhite", // BG - color
@@ -113,10 +108,14 @@ export default function SignInPage() {
                   "group-data-[hover=true]:bg-onboardWhite", // Hover
                   "dark:group-data-[focus=true]:text-black", // Text Color
                 ],
-
               }}
               endContent={
-                <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
+                <button
+                  className="focus:outline-none"
+                  type="button"
+                  onClick={toggleVisibility}
+                  aria-label="toggle password visibility"
+                >
                   {isVisible ? (
                     <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
                   ) : (
@@ -128,19 +127,27 @@ export default function SignInPage() {
               placeholder="Password"
             />
             <div className="text-right">
-              <Link href={`${siteConfig.pagesPaths.help}`} className="underline text-[13px] font-bold text-black" >Forgot password</Link>
+              <Link
+                href={`${siteConfig.pagesPaths.help}`}
+                className="underline text-[13px] font-bold text-black"
+              >
+                Forgot password
+              </Link>
             </div>
           </div>
-
         </div>
 
         {/* Button */}
         <div>
-          <Button radius="sm" className="h-[45px] bg-primary text-white font-medium" fullWidth>Sign In</Button>  
+          <Button
+            radius="sm"
+            className="h-[45px] bg-primary text-white font-medium"
+            fullWidth
+          >
+            Sign In
+          </Button>
         </div>
-
       </div>
     </FormLayout>
-
   );
 }

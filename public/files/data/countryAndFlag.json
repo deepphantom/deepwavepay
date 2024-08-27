@@ -1,0 +1,15 @@
+[
+  { "name": "United Arab Emirates", "cca2": "AE", "flag": "🇦🇪", "code": "971" },
+  { "name": "Australia", "cca2": "AU", "flag": "🇦🇺", "code": "61" },
+  { "name": "Belgium", "cca2": "BE", "flag": "🇧🇪", "code": "32" },
+  { "name": "Canada", "cca2": "CA", "flag": "🇨🇦", "code": "1" },
+  { "name": "Germany", "cca2": "DE", "flag": "🇩🇪", "code": "49" },
+  { "name": "France", "cca2": "FR", "flag": "🇫🇷", "code": "33" },
+  { "name": "Ireland", "cca2": "IE", "flag": "🇮🇪", "code": "353" },
+  { "name": "Italy", "cca2": "IT", "flag": "🇮🇹", "code": "39" },
+  { "name": "Netherlands", "cca2": "NL", "flag": "🇳🇱", "code": "31" },
+  { "name": "Portugal", "cca2": "PT", "flag": "🇵🇹", "code": "351" },
+  { "name": "Spain", "cca2": "ES", "flag": "🇪🇸", "code": "34" },
+  { "name": "United States", "cca2": "US", "flag": "🇺🇸", "code": "1" },
+  { "name": "United Kingdom", "cca2": "GB", "flag": "🇬🇧", "code": "44" }
+]
