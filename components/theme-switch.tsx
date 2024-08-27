@@ -2,12 +2,11 @@ import { FC, useState, useEffect } from "react";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@nextui-org/switch";
 import { useTheme } from "next-themes";
-import { CgDarkMode } from "react-icons/cg";
-import { GiMoon } from "react-icons/gi";
+import { LuSunMoon } from "react-icons/lu";
 
 import clsx from "clsx";
 
-import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+import { SunFilledIcon } from "@/components/icons";
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -76,7 +75,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
           ),
         })}
       >
-        {isSelected ? <GiMoon size={18} /> : <SunFilledIcon size={18} />}
+        {isSelected ? <LuSunMoon size={18} /> : <SunFilledIcon size={18} />}
       </div>
     </Component>
   );
