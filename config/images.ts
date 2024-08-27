@@ -3,4 +3,5 @@ export const siteImagesPath = {
   appIcon: require("../public/assets/icon.png"),
   lady1: require("../public/assets/lady1.jpg"),
   lady2: require("../public/assets/lady2.jpg"),
+  // icon_bg_dashboard: require("../public/assets/icon-bg.png"),
 };

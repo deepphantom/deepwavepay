@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import countries from "../../public/files/data/countryAndFlag.json";
 import countriesLocal from "../../public/files/data/countryAndFlagLocal.json";
 import { Input, Select, SelectItem } from "@nextui-org/react";
+import { siteImagesPath } from "@/config/images";
 
 const CountrySelect = (props: any) => {
   const { option, ...rest } = props;
@@ -92,7 +93,16 @@ export default function DashboardPage() {
         </div>
         {/* Side Content */}
         <div className="mt-4 xl:mt-0 xl:basis-[22%] flex flex-wrap lg:flex-nowrap xl:flex-wrap gap-4 w-full rounded-xl">
-          <div className="w-full h-[320px] flex flex-col justify-between bg-[#1E9AA3] p-5 rounded-xl">
+          <div
+            style={{
+              backgroundImage: "url('/assets/icon-bg.png')",
+              backgroundPositionX: 80,
+              backgroundBlendMode: "soft-light",
+              backgroundPositionY: 50,
+              backgroundRepeat: "no-repeat",
+            }}
+            className={`w-full h-[320px] bg-cover  flex flex-col justify-between bg-[#1E9AA3] p-5 rounded-xl`}
+          >
             {/* Country Selection */}
             <div className="flex items-center w-full justify-between">
               {/* Country */}
