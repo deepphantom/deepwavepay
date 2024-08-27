@@ -101,14 +101,34 @@ export default function DashboardPage() {
               {/* Country */}
               <div className="flex w-full gap-3">
                 <Select
-                  classNames={{}}
+                  style={{ color: "black" }}
+                  classNames={{
+                    trigger: [
+                      "bg-onboardWhite",
+                      "dark:group-data-[focus=true]:text-black", // Text Color
+                    ],
+                    popoverContent: ["bg-onboardWhite"],
+                    innerWrapper: [
+                      "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                      "group-data-[hover=true]:bg-onboardWhite", // Hover
+                      "dark:group-data-[focus=true]:text-black", // Text Color
+                    ],
+                    helperWrapper: [
+                      " text-black",
+                      "dark:group-data-[focus=true]:text-black",
+                    ],
+                    value: [
+                      "text-black",
+                      "dark:group-data-[focus=true]:text-black",
+                    ],
+                  }}
                   radius="sm"
                   placeholder={"🇬🇧 United Kingdom"}
                   size="lg"
-                  className="w-[50%]"
+                  className="w-[50%] text-black"
                 >
                   {countries.map((country) => (
-                    <SelectItem className="" key={country.code}>
+                    <SelectItem className="text-black" key={country.code}>
                       {country.flag + " " + country.name}
                     </SelectItem>
                   ))}
