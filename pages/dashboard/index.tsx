@@ -92,106 +92,81 @@ export default function DashboardPage() {
         </div>
         {/* Side Content */}
         <div className="mt-4 xl:mt-0 xl:basis-[22%] flex flex-wrap lg:flex-nowrap xl:flex-wrap gap-4 w-full rounded-xl">
-          <div className="w-full h-[350px] flex flex-col justify-between bg-[#1E9AA3] p-5 rounded-xl">
-            {/* <p className="text-white font-semibold text-[18px]">
-              Currency Converter
-            </p> */}
-
+          <div className="w-full h-[320px] flex flex-col justify-between bg-[#1E9AA3] p-5 rounded-xl">
+            {/* Country Selection */}
             <div className="flex items-center w-full justify-between">
               {/* Country */}
               <div className="flex w-full gap-3">
-                <Select
-                  style={{ color: "black" }}
-                  classNames={{
-                    trigger: [
-                      "bg-onboardWhite",
-                      "dark:group-data-[focus=true]:text-black", // Text Color
-                    ],
-                    popoverContent: ["bg-onboardWhite"],
-                    innerWrapper: [
-                      "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
-                      "group-data-[hover=true]:bg-onboardWhite", // Hover
-                      "dark:group-data-[focus=true]:text-black", // Text Color
-                    ],
-                    helperWrapper: [
-                      " text-black",
-                      "dark:group-data-[focus=true]:text-black",
-                    ],
-                    value: [
-                      "text-black",
-                      "dark:group-data-[focus=true]:text-black",
-                    ],
-                  }}
-                  radius="sm"
-                  placeholder={"🇬🇧 United Kingdom"}
-                  size="lg"
-                  className="w-[50%] text-black"
+                <select
+                  aria-label="sending"
+                  className="bg-white w-[50%] h-[45px] px-1 rounded-md text-black"
                 >
                   {countries.map((country) => (
-                    <SelectItem className="text-black" key={country.code}>
+                    <option className="text-black">
                       {country.flag + " " + country.name}
-                    </SelectItem>
+                    </option>
                   ))}
-                </Select>
-                <Select
-                  radius="sm"
-                  placeholder={"🇳🇬 Nigeria"}
-                  size="lg"
-                  className="w-[50%]"
+                </select>
+                <select
+                  aria-label="receiving"
+                  className="bg-white w-[50%] h-[45px] px-1 rounded-md text-black"
                 >
                   {countriesLocal.map((country) => (
-                    <SelectItem className="" key={country.code}>
+                    <option className="text-black">
                       {country.flag + " " + country.name}
-                    </SelectItem>
+                    </option>
                   ))}
-                </Select>
+                </select>
               </div>
             </div>
 
             {/* Input */}
             <div className=" w-full flex flex-col gap-3">
-              <Input
-                type="number"
-                label="You send (GBP)"
-                value={"1"}
-                size="lg"
-                radius="sm"
-                style={{ color: "black" }}
-                labelPlacement="outside"
-                classNames={{
-                  input: [],
-                  innerWrapper: [],
-                  inputWrapper: [
-                    "h-[45px]",
-                    "bg-onboardWhite", // BG - color
-                    "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
-                    "group-data-[hover=true]:bg-onboardWhite", // Hover
-                    "dark:group-data-[focus=true]:text-black", // Text Color
-                  ],
-                }}
-              />
-              <Input
-                type="number"
-                label="You receive (NGN)"
-                value={"1000"}
-                style={{ color: "black" }}
-                size="lg"
-                radius="sm"
-                labelPlacement="outside"
-                classNames={{
-                  input: [],
-                  innerWrapper: [],
-                  inputWrapper: [
-                    "h-[45px]",
-                    "bg-onboardWhite", // BG - color
-                    "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
-                    "group-data-[hover=true]:bg-onboardWhite", // Hover
-                    "dark:group-data-[focus=true]:text-black", // Text Color
-                  ],
-                }}
-              />
+              <div className="flex flex-col gap-1 text-white">
+                <p>You send (GBP)</p>
+                <Input
+                  type="number"
+                  value={"1"}
+                  size="lg"
+                  radius="sm"
+                  style={{ color: "black" }}
+                  classNames={{
+                    input: [],
+                    innerWrapper: [],
+                    inputWrapper: [
+                      "h-[45px]",
+                      "bg-onboardWhite", // BG - color
+                      "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                      "group-data-[hover=true]:bg-onboardWhite", // Hover
+                      "dark:group-data-[focus=true]:text-black", // Text Color
+                    ],
+                  }}
+                />
+              </div>
+              <div className="flex flex-col gap-1 text-white">
+                <p>You receive (NGN)</p>
+                <Input
+                  type="number"
+                  value={"1000"}
+                  style={{ color: "black" }}
+                  size="lg"
+                  radius="sm"
+                  classNames={{
+                    input: [],
+                    innerWrapper: [],
+                    inputWrapper: [
+                      "h-[45px]",
+                      "bg-onboardWhite", // BG - color
+                      "group-data-[focus=true]:bg-onboardWhite", // Focus on !Focus (Blur)
+                      "group-data-[hover=true]:bg-onboardWhite", // Hover
+                      "dark:group-data-[focus=true]:text-black", // Text Color
+                    ],
+                  }}
+                />
+              </div>
             </div>
 
+            {/* Details */}
             <div>
               <p className="text-[14px] text-white">Rate: $1 = 450.00 NGN</p>
               <p className="text-[14px] text-white">No transfer fees</p>
