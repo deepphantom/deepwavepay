@@ -14,17 +14,14 @@ function getOrdinalSuffix(day: any) {
 }
 
 // Function to get the formatted date
-function getFormattedDate() {
+export function getFormattedDate() {
   const today = new Date();
 
   const day = today.getDate();
-  const month = today.toLocaleString("default", { month: "short" });
+  const month = today.toLocaleString("default", { month: "numeric" });
   const year = today.getFullYear();
 
   const dayWithSuffix = day + getOrdinalSuffix(day);
 
   return `${dayWithSuffix} ${month} ${year}`;
 }
-
-// Get today's formatted date
-export const DateToday = getFormattedDate();

@@ -39,7 +39,7 @@ export default function DashboardPage() {
       <section className="block xl:flex items-start justify-between gap-4">
         {/* Main Content */}
         <div className="flex flex-wrap sm:flex-nowrap w-full xl:basis-[75%] justify-between gap-4">
-          <div className="h-[130px] w-full flex flex-col gap-2 justify-center py-3 px-4 items-start xl:w-auto xl:basis-[31%] rounded-xl bg-purpleColor">
+          <div className="h-[130px] sm:h-[150px] w-full flex flex-col gap-2 justify-center py-3 px-4 items-start xl:w-auto xl:basis-[31%] rounded-xl bg-purpleColor">
             {/* Top */}
             <div className="flex items-center gap-2">
               <div className="p-2 bg-[#B6B0E3] rounded-full">
@@ -56,7 +56,7 @@ export default function DashboardPage() {
               <p className=" text-[12px] text-black">Withdrawable balance</p>
             </div>
           </div>
-          <div className="h-[130px] w-full flex flex-col gap-2 justify-center py-3 px-4 items-start xl:w-auto xl:basis-[31%] rounded-xl bg-blueColor">
+          <div className="h-[130px] sm:h-[150px] w-full flex flex-col gap-2 justify-center py-3 px-4 items-start xl:w-auto xl:basis-[31%] rounded-xl bg-blueColor">
             {/* Top */}
             <div className="flex items-center gap-2">
               <div className="p-2 bg-[#98B4E3] rounded-full">
@@ -73,7 +73,7 @@ export default function DashboardPage() {
               <p className=" text-[12px] text-black">Available by tomorrow</p>
             </div>
           </div>
-          <div className="h-[130px] w-full flex flex-col gap-2 justify-center py-3 px-4 items-start xl:w-auto xl:basis-[31%] rounded-xl bg-greenColor">
+          <div className="h-[130px] sm:h-[150px] w-full flex flex-col gap-2 justify-center py-3 px-4 items-start xl:w-auto xl:basis-[31%] rounded-xl bg-greenColor">
             {/* Top */}
             <div className="flex items-center gap-2">
               <div className="p-2 bg-[#85CCA5] rounded-full">

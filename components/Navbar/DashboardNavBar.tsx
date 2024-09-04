@@ -1,10 +1,10 @@
-import { DateToday } from "@/layouts/datetoday";
 import { DashboardSubtitle, Dashboardtitle, onboardtitle } from "../primitives";
 import { ThemeSwitch } from "../theme-switch";
 import { IoMenuOutline, IoNotifications } from "react-icons/io5";
 import Image from "next/image";
 import { siteImagesPath } from "@/config/images";
 import { RiMenu3Fill } from "react-icons/ri";
+import { getFormattedDate } from "@/layouts/datetoday";
 
 export const DashboardNavbar = ({
   title,
@@ -24,7 +24,7 @@ export const DashboardNavbar = ({
         />
         <div>
           <h1 className={Dashboardtitle({ size: "md" })}>{title}</h1>
-          <p className={DashboardSubtitle()}>{DateToday}</p>
+          <p className={DashboardSubtitle()}>{getFormattedDate()}</p>
         </div>
       </div>
       <div className=" flex items-center gap-4">

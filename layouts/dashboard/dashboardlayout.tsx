@@ -42,7 +42,7 @@ export default function DashboardLayout({
 
   return (
     <div className="relative flex flex-col min-h-screen">
-      <Head siteTitle="Dashboard" />
+      <Head siteTitle={getTitle()} />
       <div className="flex flex-1 relative">
         <div
           className={`h-screen w-[80%] transition-all duration-500 sm:duration-0 ease-in-out md:w-max absolute md:relative z-50 bg-background ${sideNavLeft} md:left-0 overflow-scroll scrollbar-hide`}

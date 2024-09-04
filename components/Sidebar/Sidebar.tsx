@@ -137,10 +137,10 @@ export const Sidebar = ({ CloseSideNav }: { CloseSideNav: () => void }) => {
           </div>
 
           {/* Logout */}
-          <div className="h-[100px] flex cursor-pointer items-center">
+          {/* <div className="h-[100px] flex cursor-pointer items-center">
             <IoLogOutOutline size={24} />
             <p className={`md:hidden lg:flex text-sm font-medium`}>Logout</p>
-          </div>
+          </div> */}
         </nav>
       </div>
     </aside>
