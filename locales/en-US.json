@@ -1,0 +1,23 @@
+{
+  "common": {
+    "welcome": "Welcome to Deepwave Payment!",
+    "sigin-page-title": "Welcome back",
+    "sigin-page-subtitle": "Kindly enter your Login details",
+    "words": {
+      "email": "Email",
+      "password": "Password",
+      "signin": "Sign In",
+      "forgot-password": "Forgot password",
+      "create-account": "Create an account",
+      "back": "Back"
+    },
+    "onboard": {
+      "reg-page-title": "Let's get started",
+      "reg-page-subtitle": "Select your type of account",
+      "individual-account": "Individual Account",
+      "individual-description": "I want to open an Individual Account",
+      "corperate-account": "Corperate Account",
+      "corperate-description": "I want to open a Corperate Account"
+    }
+  }
+}

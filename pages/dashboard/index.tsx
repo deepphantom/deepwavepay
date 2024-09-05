@@ -7,8 +7,17 @@ import { RiCoinsFill } from "react-icons/ri";
 import PropTypes from "prop-types";
 import countries from "../../public/files/data/countryAndFlag.json";
 import countriesLocal from "../../public/files/data/countryAndFlagLocal.json";
-import { Input, Select, SelectItem } from "@nextui-org/react";
+import {
+  Button,
+  Card,
+  CardFooter,
+  Image,
+  Input,
+  Select,
+  SelectItem,
+} from "@nextui-org/react";
 import { siteImagesPath } from "@/config/images";
+import { useRouter } from "next/router";
 
 const CountrySelect = (props: any) => {
   const { option, ...rest } = props;

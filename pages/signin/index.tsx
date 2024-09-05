@@ -1,3 +1,7 @@
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
+import { loadTranslations } from "@/lib/loadTranslations";
+
 import { onboardtitle } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
@@ -9,8 +13,12 @@ import { Button } from "@nextui-org/button";
 import { FormLayout } from "@/layouts/onboard/form";
 import { IoLogoGoogle } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 export default function SignInPage() {
+  // Hooks
+  const router = useRouter();
+
   // State
   const [isVisible, setIsVisible] = React.useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
@@ -39,17 +47,23 @@ export default function SignInPage() {
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
+  const t = useTranslations("common");
+
   return (
-    <FormLayout title="Sign In" subtitle="Welcome back! Continue">
+    <FormLayout
+      bottom={t("words.create-account")}
+      title="Sign In"
+      subtitle="Welcome back! Continue"
+    >
       <div
         className={`flex w-full flex-col ${dimensions.height < 700 ? "gap-5" : "gap-8"}`}
       >
         {/* Heading */}
         <div className="text-center sm:text-center">
           <h1 className={`${onboardtitle({ size: "sm" })} text-black`}>
-            Welcome back
+            {t("sigin-page-title")}
           </h1>
-          <p className="text-black">Kindly enter your Login details</p>
+          <p className="text-black">{t("sigin-page-subtitle")}</p>
         </div>
 
         {/* Button */}
@@ -79,7 +93,7 @@ export default function SignInPage() {
           <Input
             radius="sm"
             type="email"
-            placeholder="Email"
+            placeholder={t("words.email")}
             style={{ color: "black" }}
             classNames={{
               input: [],
@@ -124,14 +138,14 @@ export default function SignInPage() {
                 </button>
               }
               type={isVisible ? "text" : "password"}
-              placeholder="Password"
+              placeholder={t("words.password")}
             />
             <div className="text-right">
               <Link
                 href={`${siteConfig.pagesPaths.help}`}
                 className="underline text-[13px] font-bold text-black"
               >
-                Forgot password
+                {t("words.forgot-password")}
               </Link>
             </div>
           </div>
@@ -144,10 +158,21 @@ export default function SignInPage() {
             className="h-[45px] bg-primary text-white font-medium"
             fullWidth
           >
-            Sign In
+            {t("words.signin")}
           </Button>
         </div>
       </div>
     </FormLayout>
   );
+}
+
+// Fetch the translations based on the locale
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const messages = await loadTranslations(locale || "en-US");
+
+  return {
+    props: {
+      messages,
+    },
+  };
 }

@@ -1,0 +1,23 @@
+{
+  "common": {
+    "welcome": "Bienvenue chez Deepwave Payment!",
+    "sigin-page-title": "Bon retour",
+    "sigin-page-subtitle": "Veuillez entrer vos informations de connexion",
+    "words": {
+      "email": "Email",
+      "password": "Mot de passe",
+      "signin": "Se connecter",
+      "forgot-password": "Mot de passe oublié",
+      "create-account": "Créer un compte",
+      "back": "Retour"
+    },
+    "onboard": {
+      "reg-page-title": "Commençons",
+      "reg-page-subtitle": "Sélectionnez votre type de compte",
+      "individual-account": "Compte Individuel",
+      "individual-description": "Je souhaite ouvrir un Compte Individuel",
+      "corperate-account": "Compte Société",
+      "corperate-description": "Je souhaite ouvrir un Compte Société"
+    }
+  }
+}

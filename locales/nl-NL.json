@@ -1,0 +1,23 @@
+{
+  "common": {
+    "welcome": "Welkom bij Deepwave Payment!",
+    "sigin-page-title": "Welkom terug",
+    "sigin-page-subtitle": "Voer je inloggegevens in",
+    "words": {
+      "email": "E-mail",
+      "password": "Wachtwoord",
+      "signin": "Inloggen",
+      "forgot-password": "Wachtwoord vergeten",
+      "create-account": "Account aanmaken",
+      "back": "Terug"
+    },
+    "onboard": {
+      "reg-page-title": "Laten we beginnen",
+      "reg-page-subtitle": "Kies je type account",
+      "individual-account": "Individueel Account",
+      "individual-description": "Ik wil een Individueel Account openen",
+      "corperate-account": "Bedrijfsaccount",
+      "corperate-description": "Ik wil een Bedrijfsaccount openen"
+    }
+  }
+}

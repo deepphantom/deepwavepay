@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useRouter } from "next/router";
 import {
   RiDashboardHorizontalFill,
@@ -10,13 +9,13 @@ import { HiMiniArrowsRightLeft } from "react-icons/hi2";
 import { TiLocationArrowOutline } from "react-icons/ti";
 import { TbReceipt } from "react-icons/tb";
 import { PiWebhooksLogo } from "react-icons/pi";
-import { IoLogOutOutline, IoSettingsOutline } from "react-icons/io5";
+import { IoSettingsOutline } from "react-icons/io5";
 import { IoHelpSharp } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
 import { siteImagesPath } from "@/config/images";
 import { useTheme } from "next-themes";
-import { RiMenu3Fill } from "react-icons/ri";
+import { PiCopySimple } from "react-icons/pi";
 import { Divider } from "@nextui-org/divider";
 
 interface LinkTypes {
@@ -55,6 +54,11 @@ const Links: LinkTypes[] = [
     title: "Bills & Utilities",
     icon: <TbReceipt size={24} />,
     path: "/dashboard/utilities",
+  },
+  {
+    title: "",
+    icon: <Divider />,
+    path: "",
   },
   {
     title: "Webhooks",
@@ -97,8 +101,11 @@ export const Sidebar = ({ CloseSideNav }: { CloseSideNav: () => void }) => {
                 />
                 <div className=" md:hidden lg:flex flex-col">
                   <h1 className="font-semibold text-[14px]">Nora Watson</h1>
-                  <p className="text-[10px] mt-[-2px] font-medium">
-                    ID:<span className="opacity-60">D2K4SN7SS</span>
+                  <p className="text-[10px] mt-[-2px] font-medium flex items-center gap-1">
+                    <span>
+                      ID:<span className="opacity-70">D2K4SN7SS</span>
+                    </span>
+                    <PiCopySimple size={12} />
                   </p>
                 </div>
               </div>
@@ -118,7 +125,7 @@ export const Sidebar = ({ CloseSideNav }: { CloseSideNav: () => void }) => {
                 <li key={link.path}>
                   <Link
                     href={link.path}
-                    className={`flex w-[80%] md:w-full cursor-pointer items-center gap-2 px-4 py-3 lg:py-2 rounded-lg ${
+                    className={` ${link.path == "" && "pointer-events-none"} flex w-[80%] md:w-full cursor-pointer items-center gap-2 px-4 py-3 lg:py-2 rounded-lg ${
                       currentPath === link.path
                         ? "bg-secondary text-black "
                         : ""

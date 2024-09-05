@@ -18,7 +18,7 @@ export function getFormattedDate() {
   const today = new Date();
 
   const day = today.getDate();
-  const month = today.toLocaleString("default", { month: "numeric" });
+  const month = today.toLocaleString("default", { month: "long" });
   const year = today.getFullYear();
 
   const dayWithSuffix = day + getOrdinalSuffix(day);

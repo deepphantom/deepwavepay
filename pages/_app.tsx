@@ -9,6 +9,7 @@ import "@/styles/globals.css";
 import { Progress } from "@nextui-org/progress";
 import { useState, useEffect } from "react";
 import { OnboardingProvider } from "@/context/OnboadingContext";
+import { NextIntlClientProvider } from "next-intl";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -37,7 +38,13 @@ export default function App({ Component, pageProps }: AppProps) {
           <Progress size="sm" isIndeterminate aria-label="Loading..." />
         )}
         <OnboardingProvider>
-          <Component {...pageProps} />
+          <NextIntlClientProvider
+            locale={router.locale}
+            timeZone="Europe/London"
+            messages={pageProps.messages}
+          >
+            <Component {...pageProps} />
+          </NextIntlClientProvider>
         </OnboardingProvider>
       </NextThemesProvider>
     </NextUIProvider>

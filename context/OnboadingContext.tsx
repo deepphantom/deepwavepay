@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useState } from "react";
 
 // Define the type for the context value
 type AccountTypeContextType = {
@@ -7,7 +7,9 @@ type AccountTypeContextType = {
 };
 
 // Create the context with the correct type
-const AccountTypeContext = createContext<AccountTypeContextType | undefined>(undefined);
+const AccountTypeContext = createContext<AccountTypeContextType | undefined>(
+  undefined
+);
 
 export const OnboardingProvider = ({ children }: any) => {
   const [accountType, setAccountType] = useState<string | null>(null);
@@ -22,7 +24,7 @@ export const OnboardingProvider = ({ children }: any) => {
 export const useAccountType = () => {
   const context = useContext(AccountTypeContext);
   if (context === undefined) {
-    throw new Error('useAccountType must be used within an OnboardingProvider');
+    throw new Error("useAccountType must be used within an OnboardingProvider");
   }
   return context;
 };
