@@ -17,7 +17,7 @@ export default function IndexPage() {
         <p className={title()}> {t("welcome")} </p>
         <Link href={`/${siteConfig.pagesPaths.onboading}`}>Create Account</Link>
         <Link href={`/${siteConfig.pagesPaths.signin}`}>Sign In</Link>
-        <Link href={`/${siteConfig.pagesPaths.dashboard}`}>Dashboard</Link>
+        <Link href={`${siteConfig.pagesPaths.dashboard}`}>Dashboard</Link>
         <ThemeSwitch />
         <LanguageSwitcher />
       </section>

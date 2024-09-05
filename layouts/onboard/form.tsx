@@ -71,6 +71,7 @@ export const FormLayout = ({
             </div>
 
             {/* SM */}
+
             <div
               className={`mt-5 ${routePath == "/signin" ? "hidden sm:flex flex-col " : "hidden"}`}
             >
